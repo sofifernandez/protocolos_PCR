@@ -1,0 +1,72 @@
+.mainCard {
+  background-color: #ffdb59;
+  border-radius: 1rem;
+  border: 3px solid black;
+  box-shadow: 3px 3px black;
+}
+
+.cardName {
+  font-style: italic;
+  font-weight: 900;
+}
+
+.imagen {
+  border: 2px solid black;
+  width: 300px;
+  height: auto;
+}
+
+.propertyTitle {
+  background-color: white;
+  border-radius: 2rem;
+  border: 2px solid #000;
+}
+
+.targetTitleCircle {
+  width: 32px;
+  height: 32px;
+  align-items: flex-end;
+  border: 2px solid #000;
+  border-radius: 20px;
+  background-color: #28eca5;
+}
+
+.typeTitleCircle {
+  @extend .targetTitleCircle;
+  background-color: #e964bb;
+}
+
+.refTitleCircle {
+  @extend .targetTitleCircle;
+  background-color: #ff5959;
+}
+
+.more {
+  background-color: #49a6fc;
+  max-width: fit-content;
+  font-weight: 900;
+  transform: rotate(-4deg);
+}
+
+.info {
+  @extend .more;
+  background-color: #ffb74b;
+  transform: rotate(+4deg);
+}
+
+.moreInfoText {
+  background-color: white;
+  border-radius: 1rem;
+  border: 3px solid black;
+  box-shadow: 3px 3px black;
+}
+
+.moreInfoTitleCircle {
+  @extend .targetTitleCircle;
+  background-color: black;
+}
+
+.moreInfoTitle {
+  width: fit-content;
+  font-weight: 900;
+}
