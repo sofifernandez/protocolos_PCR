@@ -1,6 +1,6 @@
 import "./NavBar.scss"
 import "./../../font/stylesheet.css"
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 export const NavBar = () => {
@@ -11,25 +11,27 @@ export const NavBar = () => {
             <div className="header-category">
                 <a href="#ui-kits" className="header-links">
                     <div className="header-category-tag">
-                        PCR
+                        <NavLink to={'/'}>Home</NavLink>
                     </div>
                     <div className="header-tag-circle yellow">
                     </div>
                 </a>
             </div>
+
             <div className="header-category">
                 <a href="#ui-kits" className="header-links">
                     <div className="header-category-tag">
-                        qPCR
+                        PCR
                     </div>
                     <div className="header-tag-circle skyblue">
                     </div>
                 </a>
             </div>
+            
             <div className="header-category">
                 <a href="#ui-kits" className="header-links">
                     <div className="header-category-tag">
-                        Buscar
+                        qPCR
                     </div>
                     <div className="header-tag-circle red">
                     </div>

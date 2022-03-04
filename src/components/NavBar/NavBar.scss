@@ -48,7 +48,12 @@
   text-decoration: none;
   &:hover {
     background-color: #000;
-    color: #fff;
+  }
+  a {
+    color: #000;
+    &:hover {
+      color: #fff;
+    }
   }
 }
 

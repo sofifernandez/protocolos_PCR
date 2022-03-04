@@ -1,0 +1,131 @@
+[
+    {
+        "id": "135344",
+        "target_microorganism": "Virus de la leucosis bovina",
+        "target_group": "Virus",
+        "type_1": "PCR",
+        "type_2": "nested",
+        "target_gene": "polB",
+        "target_size": ["474 bp", "474 bp"],
+        "forward_1": {
+            "name": "F1",
+            "seq": "ATCTCCGTTGCACTCTTTGC",
+            "primer_conc": "1 uM"
+        },
+        "reverse_1": {
+            "name": "R1",
+            "seq": "ACCATCATCATCATCGTCCA",
+            "primer_conc": "1 uM"
+        },
+        "forward_2": {
+            "name": "F2",
+            "seq": "ATCTCCGTTGCACTCTTTGC",
+            "primer_conc": "1 uM"
+        },
+        "reverse_2": {
+            "name": "R2",
+            "seq": "ACCATCATCATCATCGTCCA",
+            "primer_conc": "1 uM"
+        },
+        "probe": false,
+        "rxn_1": {
+            "buffer": {
+                "name": "MangoMix",
+                "volume": 10
+            },
+            "forward_1": 2,
+            "reverse_1": 2,
+            "forward_2": 2,
+            "reverse_2": 2,
+            "forward_3": 2,
+            "reverse_3": 2,
+            "probe": 0,
+            "DNA": 2,
+            "H2O": 3,
+            "total": 20,
+            "BSA": {
+                "conc": "0.1%",
+                "volumen": 1
+            }
+        },
+        "rxn_2": {
+            "buffer": {
+                "name": "MangoMix",
+                "volume": 10
+            },
+            "forward_1": 2,
+            "reverse_1": 2,
+            "forward_2": 2,
+            "reverse_2": 2,
+            "forward_3": 2,
+            "reverse_3": 2,
+            "probe": 0,
+            "DNA": 2,
+            "H2O": 3,
+            "total": 20,
+            "BSA": {
+                "conc": "0.1%",
+                "volumen": 1
+            }
+        },
+        "cicling_1": {
+            "name": "blabla",
+            "step_one": {
+                "time": "5 min",
+                "temperature": "95 °C"
+            },
+            "step_two": {
+                "cicles": 35,
+                "step_a": {
+                    "time": "30 seg",
+                    "temperature": "94 °C"
+                },
+                "step_b": {
+                    "time": "30 seg",
+                    "temperature": "58 °C"
+                },
+                "step_c": {
+                    "time": "1 min",
+                    "temperature": "72 °C"
+                }
+            },
+            "step_three": {
+                "time": "5 min",
+                "temperature": "72 °C"
+            },
+            "melting": false
+        },
+        "cicling_2": {
+            "name": "blabla",
+            "step_one": {
+                "time": "5 min",
+                "temperature": "95 °C"
+            },
+            "step_two": {
+                "cicles": 35,
+                "step_a": {
+                    "time": "30 seg",
+                    "temperature": "94 °C"
+                },
+                "step_b": {
+                    "time": "30 seg",
+                    "temperature": "58 °C"
+                },
+                "step_c": {
+                    "time": "1 min",
+                    "temperature": "72 °C"
+                }
+            },
+            "step_three": {
+                "time": "5 min",
+                "temperature": "72 °C"
+            },
+            "melting": false
+        },
+        "reference": "Fulano et al. 2006",
+        "reference_http": "",
+        "positive_control": "strain",
+        "image": "",
+        "notes": ""
+    }
+]
