@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "target_microorganism": "Leptospira spp.",
         "target_group": "Bacteria",
         "type_1": "PCR",
@@ -68,7 +68,7 @@
         "notes": ""
     },
     {
-        "id": 2,
+        "id": "2",
         "target_microorganism": "Leptospira spp.",
         "target_group": "Bacteria",
         "type_1": "qPCR",
@@ -134,7 +134,7 @@
         "notes": ""
     },
     {
-        "id": 3,
+        "id": "3",
         "target_microorganism": "Neospora caninum",
         "target_group": "Eucariota",
         "type_1": "PCR",
@@ -199,7 +199,7 @@
         "notes": "Se probó en qPCR y funciona. Misma concentración de primers con el ciclado: 95°C -> 10 min | 94°C -> 30s | 62°C -> 1min | x40"
     },
     {
-        "id": 10,
+        "id": "10",
         "target_microorganism": "Apicomplejos (Neospora, Toxo, Sacro y Hamm.)",
         "target_group": "Eucariota",
         "type_1": "PCR",
@@ -265,7 +265,7 @@
         "notes": ""
     },
     {
-        "id": 4,
+        "id": "4",
         "target_microorganism": "Cryptosporidium spp.",
         "target_group": "Eucariota",
         "type_1": "qPCR",
@@ -331,7 +331,7 @@
         "notes": ""
     },
     {
-        "id": 5,
+        "id": "5",
         "target_microorganism": "Dichelobacter nodosus",
         "target_group": "Bacteria",
         "type_1": "qPCR",
@@ -394,7 +394,7 @@
         "notes": ""
     },
     {
-        "id": 6,
+        "id": "6",
         "target_microorganism": "Mycobacterium avium sb paratuberculosis",
         "target_group": "Bacteria",
         "type_1": "qPCR",
@@ -460,7 +460,7 @@
         "notes": ""
     },
     {
-        "id": 7,
+        "id": "7",
         "target_microorganism": "Mycobacterium avium sb paratuberculosis",
         "target_group": "Bacteria",
         "type_1": "qPCR",
@@ -526,7 +526,7 @@
         "notes": ""
     },
     {
-        "id": 8,
+        "id": "8",
         "target_microorganism": "Toxoplasma gondii",
         "target_group": "Eucariota",
         "type_1": "PCR",
@@ -591,7 +591,7 @@
         "notes": ""
     },
     {
-        "id": 9,
+        "id": "9",
         "target_microorganism": "BACTERIA",
         "target_group": "Bacteria",
         "type_1": "PCR",

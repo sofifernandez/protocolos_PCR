@@ -1,4 +1,4 @@
-
+import {  NavLink } from "react-router-dom";
 import './CardPCR.scss'
 
 export const CardPCR = ({card}) => {
@@ -10,9 +10,9 @@ export const CardPCR = ({card}) => {
             /*                                    CARD                                    */
             /* -------------------------------------------------------------------------- */}
             <div className='mainCard  justify-content-center row mb-5'>
-                <div className='text-center cardName fs-3 col-12 my-3'>
+                <NavLink to={`/protocolo/${card.id}`}><div className='text-center cardName fs-3 col-12 my-3'>
                     {card.target_microorganism}
-                </div>
+                </div></NavLink>
                 {/* CARD GENE */}
                 <div className='species col-12 row justify-content-evenly mb-3'>
                     <div className='col-7 propertyTitle row'>

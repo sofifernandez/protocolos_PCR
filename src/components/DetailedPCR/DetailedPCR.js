@@ -1,23 +1,29 @@
 import './DetailedPCR.scss'
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export const DetailedPCR = () => {
+    const { protocoloID } = useParams();
     const [details, setDetails] = useState();
 
 
     useEffect(() => {
-        fetch('protocolos.json')
-            .then(res => res.json()
-                .then(data => setDetails(data[1])))
-    }, [])
+        const fetchJSON = async () => {
+            const response = await fetch("/protocolos.json");
+            let jsoni = await response.json();
+            const objIndex = jsoni.findIndex((obj => obj.id === protocoloID))
+            setDetails(jsoni[objIndex]);
+        };
+        fetchJSON();
 
+    }, [protocoloID])
 
 
     if (!details) return null;
     return (
         <div className="row container-fluid mx-0 justify-content-center">
             {/* GENERAL DATA CARD ----------------------------------------------------------------------------------------------------------*/}
-            <div className="row col-12 col-md-8 fs-1 pb-3 mb-5 detailCard">
+            <div className="row col-12 col-md-9 fs-1 pb-3 mb-5 detailCard">
                 <p className='text-center'>{details.target_microorganism}</p>
                 <div>
                     <div className='row mb-2 justify-content-center'>
@@ -35,27 +41,26 @@ export const DetailedPCR = () => {
                     <div className='row mb-5 justify-content-center'>
                         <div className='col-12 col-sm-6 ms-sm-auto text-center propertyFour'>Ref:</div>
                         <div className='col-12 col-sm-6 ms-sm-auto fs-3 text-center text-sm-start propertyValue'>
-                            <a href={details.reference_http}>{details.reference.substring(0, 8 + details.reference.indexOf('al. '))}</a>
+                            <a href={details.reference_http}>{details.reference.substring(0, 8 + details.reference.indexOf('al. '))}</a> 
                         </div>
                     </div>
                     <div className='row mb-2 justify-content-center'>
-                        <div className='col-12 col-sm-6 ms-sm-auto my-auto text-center propertyFive'>{details.forward.name}:</div>
-                        <div className='col-12 col-sm-6 ms-sm-auto my-auto fs-5 text-center text-sm-start propertyValue'>{details.forward.seq}</div>
+                        <div className='col-12 col-lg-6 my-auto text-center propertyFive'>{details.forward.name}:</div> 
+                       <div className='col-12 col-lg-6 my-auto fs-5 text-center text-lg-start propertyValue'>{details.forward.seq}</div>
                     </div>
                     <div className='row mb-2 justify-content-center'>
-                        <div className='col-12 col-sm-6 ms-sm-auto my-auto text-center propertySix'>{details.reverse.name}:</div>
-                        <div className='col-12 col-sm-6 ms-sm-auto my-auto fs-5 text-center text-sm-start propertyValue'>{details.reverse.seq}</div>
+                        <div className='col-12 col-lg-6 my-auto text-center propertySix'>{details.reverse.name}:</div> 
+                         <div className='col-12 col-lg-6 my-auto fs-5 text-center text-lg-start propertyValue'>{details.reverse.seq}</div> 
                     </div>
                     {details.probe ? <div className='row mb-2 justify-content-center'>
-                        <div className='col-12 col-sm-6 ms-sm-auto my-auto text-center propertySeven'>{details.probe.name}:</div>
-                        <div className='col-12 col-sm-6 ms-sm-auto my-auto fs-5 text-center text-sm-start propertyValue'>{details.probe.seq}</div>
+                        <div className='col-12 col-lg-6 my-auto  my-auto text-center propertySeven'>{details.probe.name}:</div>
+                        <div className='col-12 col-lg-6 my-auto  my-auto fs-5 text-center propertyValue'>{details.probe.seq}</div>
                     </div> : null}
                 </div>
             </div>
-
             {/* MASTER MIX--------------------------------------------------------------------------------------------------------------- */}
             <div className="row container-fluid mx-0 justify-content-center">
-                <div className='row col-12 col-md-6 justify-content-center mb-5 masterMixCard'>
+                <div className='row col-12 col-md-10 col-lg-8 justify-content-center mb-5 masterMixCard'>
                     <div className='text-center cardTitle fs-1 col-12 mt-3'>
                         MASTER MIX
                     </div>
@@ -137,7 +142,7 @@ export const DetailedPCR = () => {
                         <div className='col-7 fs-3 text-center'>
                             {details.rxn.BSA.volumen} uL
                         </div>
-                    </div> : null}
+                    </div> : null} 
                     {/* H20 */}
                     <div className=' col-12 row justify-content-evenly mb-3'>
                         <div className='col-5 propertyTitleMix row'>
@@ -173,7 +178,7 @@ export const DetailedPCR = () => {
 
             {/* CICLADO-------------------------------------------------------------------------------------------------------------- */}
             <div className="row container-fluid mx-0 justify-content-center">
-                <div className="row col-7 col-md-4 fs-1 pb-3 mb-5 cicleCard">
+                <div className="row col-8 fs-1 pb-3 mb-5 cicleCard">
                     <div className='text-center cardTitle fs-1 col-12 mt-3'>
                         Ciclado
                     </div>
@@ -214,7 +219,7 @@ export const DetailedPCR = () => {
                         <div className='col-3 titleCircle my-auto'>
                         </div>
                         <div className='col-9 fs-3 text-center'>
-                            {details.cicling.step_two.step_c.temperature} | {details.cicling.step_two.step_c.time} <i class="fa-solid fa-camera"></i>
+                            {details.cicling.step_two.step_c.temperature} | {details.cicling.step_two.step_c.time} <i className="fa-solid fa-camera"></i>
                         </div>
                     </div>
 
@@ -229,7 +234,7 @@ export const DetailedPCR = () => {
                         </div></> : null}
 
                     {details.cicling.melting ? <><div className='justify-sef-start stepTitles fs-2 ms-5 mb-3'>
-                        STEP 3
+                        STEP 4
                     </div><div className=' col-12 row justify-content-center mb-3'>
                             <div className='col-3 titleCircle my-auto'>
                             </div>
@@ -237,7 +242,7 @@ export const DetailedPCR = () => {
                                 Melting curve
                             </div>
                         </div></> : null}
-                    <div className='fs-5 text-center'>Nombre: { details.cicling.name}</div>
+                    <div className='fs-5 text-center'>Nombre: {details.cicling.name}</div>
                 </div>
             </div>
             {details.notes}
