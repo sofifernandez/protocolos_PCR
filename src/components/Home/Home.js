@@ -7,12 +7,6 @@ export const Home = () => {
     const [cards, setCards] = useState([]);
     const [search, setSearch] = useState()
 
-    // useEffect(() => {
-    //     fetch('protocolos.json')
-    //         .then(res => res.json()
-    //             .then(data => setCards([...data])))
-    // }, [])
-
 
     useEffect(() => {
         async function fetchMyAPI() {
@@ -35,7 +29,7 @@ export const Home = () => {
 
             {/* SEARCHBOX----------------------------------------------------------- */}
             <div className="row mb-5 justify-content-center">
-                <div href="#ui-kits" className=" col-10 col-sm-8 col-md-5 searchBox">
+                <div className=" col-10 col-sm-8 col-md-5 searchBox">
                     <input className="col-10" type="text" name="busqueda" id="" placeholder="Buscar" onChange={handleChange} />
                     <div className="header-tag-circle pinkCircle">
                     </div>
@@ -67,10 +61,10 @@ export const Home = () => {
                             : "Loading..."}
                     </div>
                     <div className='characterTittle col-8 col-sm-6 fs-1 text-center'>
-                        ~Multiples~
+                        ~Múltiples~
                     </div>
                     <div className="mt-4 mb-5 container-fluid row justify-content-center">
-                        {cards.length ? cards.filter(pcr => pcr.target_group === "Múltiple").map((card) => (<CardPCR card={card} key={card.id} />))
+                        {cards.length ? cards.filter(pcr => pcr.type_2 === "multiplex").map((card) => (<CardPCR card={card} key={card.id} />))
                             : "Loading..."}
                     </div>
                     <div className='characterTittle col-8 col-sm-6 fs-1 text-center'>

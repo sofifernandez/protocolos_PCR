@@ -9,13 +9,13 @@ export const NavBar = () => {
             <div className="heroline"></div>
             <h1 className="animate__animated animate__swing">Protocolos de Biología Molecular (PSA, INIA-LE)</h1>
             <div className="header-category">
-                <a href="#ui-kits" className="header-links">
+                <div className="header-links">
                     <div className="header-category-tag">
                         <NavLink to={'/'}>Home</NavLink>
                     </div>
                     <div className="header-tag-circle yellow">
                     </div>
-                </a>
+                </div>
             </div>
 
             <div className="header-category">

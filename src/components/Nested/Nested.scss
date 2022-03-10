@@ -1,0 +1,98 @@
+.detailCard {
+  background-color: #ede5df;
+  border-bottom: solid 5px black;
+  p {
+    font-family: "Galindo", cursive;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+}
+
+.propertyType {
+  background-color: #ffb74b;
+  width: fit-content;
+  transform: rotate(-4deg);
+  border: dashed 2px black;
+}
+
+.propertyTarget {
+  @extend .propertyType;
+  background-color: #49a6fc;
+  transform: rotate(+0.8deg);
+}
+
+.propertySize {
+  @extend .propertyType;
+  background-color: #e964bb;
+  transform: rotate(-4deg);
+}
+
+.propertyRef {
+  @extend .propertyType;
+  background-color: #28eca5;
+  transform: rotate(-3deg);
+}
+
+.primerProps {
+  width: fit-content;
+  border: solid 2px black;
+  background-color: #ff5959;
+}
+
+.ronda {
+  font-size: 1.5rem;
+  font-family: "Galindo", cursive;
+}
+
+.ronda1 {
+  background-color: #ffdb59;
+  border: 2px dashed black;
+}
+
+.ronda2 {
+  background-color: #bd88e8;
+  border: 2px dashed black;
+}
+
+// MASTER MIX-------------------------------------------------------------------------------------------------------------------------------
+.masterMixCard {
+  background-color: #e5f9e9;
+  border-radius: 1rem;
+  border: 3px solid black;
+  box-shadow: 3px 3px black;
+}
+
+.cardTitle {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: "Galindo", cursive;
+}
+
+.propertyTitleMix {
+  //width: fit-content;
+  background-color: white;
+  border-radius: 2rem;
+  border: 2px solid #000;
+}
+
+.titleCircle {
+  width: 32px;
+  height: 32px;
+  align-items: flex-end;
+  border: 2px solid #000;
+  border-radius: 20px;
+  background-color: #ffdb59;
+}
+//CLICLING------------------------------------------------------------------------------------------------------------------------------------
+
+.cicleCard {
+  @extend .masterMixCard;
+  background-color: white;
+}
+
+.stepTitles {
+  color: white;
+  background-color: #000;
+  width: fit-content;
+  font-weight: 900;
+}

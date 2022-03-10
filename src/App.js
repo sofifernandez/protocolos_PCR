@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NavBar } from './components/NavBar/NavBar.js'
-//import { CardPCR } from './components/CardPCR/CardPCR.js';
 import { Home } from './components/Home/Home.js';
 import { DetailedPCR } from './components/DetailedPCR/DetailedPCR'
 import './App.css';

@@ -6,38 +6,65 @@
         "type_1": "PCR",
         "type_2": "multiplex",
         "target_gene": "varios",
-        "target_size": ["474 bp", "474 bp", "474 bp"],
-        "forward_1": {
-            "name": "F1",
-            "seq": "ATCTCCGTTGCACTCTTTGC",
-            "primer_conc": "1 uM"
-        },
-        "reverse_1": {
-            "name": "R1",
-            "seq": "ACCATCATCATCATCGTCCA",
-            "primer_conc": "1 uM"
-        },
-        "forward_2": {
-            "name": "F2",
-            "seq": "ATCTCCGTTGCACTCTTTGC",
-            "primer_conc": "1 uM"
-        },
-        "reverse_2": {
-            "name": "R2",
-            "seq": "ACCATCATCATCATCGTCCA",
-            "primer_conc": "1 uM"
-        },
-        "forward_3": {
-            "name": "F3",
-            "seq": "ATCTCCGTTGCACTCTTTGC",
-            "primer_conc": "1 uM"
-        },
-        "reverse_3": {
-            "name": "R3",
-            "seq": "ACCATCATCATCATCGTCCA",
-            "primer_conc": "1 uM"
-        },
-        "probe": false,
+        "groups": [
+            {
+                "group_1": {
+                    "target": "B. bovis",
+                    "size": "100 pb",
+                    "forward": {
+                        "name": "F1",
+                        "seq": "ATCTCCGTTGCACTCTTTGC",
+                        "primer_conc": "1 uM",
+                        "volume":1
+                    },
+                    "reverse": {
+                        "name": "R1",
+                        "seq": "ACCATCATCATCATCGTCCA",
+                        "primer_conc": "1 uM",
+                        "volume":1
+                    },
+                    "probe": false
+                }
+            },
+            {
+                "group_2": {
+                    "target": "B. bigemina",
+                    "size": "100 pb",
+                    "forward": {
+                        "name": "F1",
+                        "seq": "ATCTCCGTTGCACTCTTTGC",
+                        "primer_conc": "1 uM",
+                        "volume":1
+                    },
+                    "reverse": {
+                        "name": "R1",
+                        "seq": "ACCATCATCATCATCGTCCA",
+                        "primer_conc": "1 uM",
+                        "volume":1
+                    },
+                    "probe": false
+                }
+            },
+            {
+                "group_3": {
+                    "target": "A. marginale",
+                    "size": "100 pb",
+                    "forward": {
+                        "name": "F1",
+                        "seq": "ATCTCCGTTGCACTCTTTGC",
+                        "primer_conc": "1 uM",
+                        "volume":1
+                    },
+                    "reverse": {
+                        "name": "R1",
+                        "seq": "ACCATCATCATCATCGTCCA",
+                        "primer_conc": "1 uM",
+                        "volume":1
+                    },
+                    "probe": false
+                }
+            }
+        ],
         "rxn": {
             "buffer": {
                 "name": "MangoMix",

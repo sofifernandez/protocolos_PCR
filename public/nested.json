@@ -6,7 +6,7 @@
         "type_1": "PCR",
         "type_2": "nested",
         "target_gene": "polB",
-        "target_size": ["474 bp", "474 bp"],
+        "target_size": "474 bp",
         "forward_1": {
             "name": "F1",
             "seq": "ATCTCCGTTGCACTCTTTGC",
@@ -27,7 +27,6 @@
             "seq": "ACCATCATCATCATCGTCCA",
             "primer_conc": "1 uM"
         },
-        "probe": false,
         "rxn_1": {
             "buffer": {
                 "name": "MangoMix",
@@ -35,11 +34,6 @@
             },
             "forward_1": 2,
             "reverse_1": 2,
-            "forward_2": 2,
-            "reverse_2": 2,
-            "forward_3": 2,
-            "reverse_3": 2,
-            "probe": 0,
             "DNA": 2,
             "H2O": 3,
             "total": 20,
@@ -53,13 +47,8 @@
                 "name": "MangoMix",
                 "volume": 10
             },
-            "forward_1": 2,
-            "reverse_1": 2,
             "forward_2": 2,
             "reverse_2": 2,
-            "forward_3": 2,
-            "reverse_3": 2,
-            "probe": 0,
             "DNA": 2,
             "H2O": 3,
             "total": 20,
