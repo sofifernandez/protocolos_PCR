@@ -1,3 +1,4 @@
+import React from 'react';
 import { MixReagent } from "../MixReagent/MixReagent";
 import { CicleStep } from "../CicleStep/CicleStep";
 import './MultiPlex.scss'
@@ -28,45 +29,23 @@ export const MultiPlex = ({ details }) => {
                         </div>
                     </div>
                     {details.groups.map(grupo =>
-                        <>
+                        <div key={grupo.target}>
                             <div className="heroline"></div>
-                            <div className="text-center font-weight-bold ronda">{grupo.target}:</div>
-                            {console.log(grupo)}
-                            {/* <div className='row mb-2 justify-content-center'>
-                                <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#FFDB59" }}>{grupo.forward.name}:</div>
+                            <div className="text-center font-weight-bold ronda">{grupo.target}: { grupo.size}</div>
+                            <div className='row mb-2 justify-content-center'>
+                                <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#E964BB" }}>{grupo.forward.name}:</div>
                                 <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{grupo.forward.seq}</div>
                             </div>
                             <div className='row mb-2 justify-content-center'>
                                 <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#FFDB59" }}>{grupo.reverse.name}:</div>
                                 <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{grupo.reverse.seq}</div>
-                            </div> */}
-                        </>
+                            </div>
+                        </div>
                     )}
-                    {/* <div className="heroline"></div>
-                    <div className="text-center font-weight-bold ronda">RONDA 1:</div>
-                    <div className='row mb-2 justify-content-center'>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#FFDB59" }}>{details.forward_1.name}:</div>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{details.forward_1.seq}</div>
-                    </div>
-                    <div className='row mb-2 justify-content-center'>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#FFDB59" }}>{details.reverse_1.name}:</div>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{details.reverse_1.seq}</div>
-                    </div>
-                    <div className="heroline"></div>
-                    <div className="text-center ronda">RONDA 2:</div>
-                    <div className='row mb-2 justify-content-center'>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#A962E1" }}>{details.forward_2.name}:</div>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{details.forward_2.seq}</div>
-                    </div>
-                    <div className='row mb-2 justify-content-center'>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#A962E1" }}>{details.reverse_2.name}:</div>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{details.reverse_2.seq}</div>
-                    </div> */}
-
                 </div>
             </div>
 
-                        <div className='row justify-content-center'>
+            <div className='row justify-content-center'>
                 {/* MASTER MIX--------------------------------------------------------------------------------------------------------------- */}
                 <div className="row col-12 col-md-10 col-lg-6 container-fluid mx-0 justify-content-center">
                     <div className='row  justify-content-center mb-5 masterMixCard'>
@@ -76,12 +55,14 @@ export const MultiPlex = ({ details }) => {
                         <div className='mb-3 text-center'>Primer y sondas a 10uM</div>
                         {/* BUFFER */}
                         <MixReagent name={details.rxn.buffer.name} volume={details.rxn.buffer.volume} />
-                        {/* FORWARD*/}
-                        <MixReagent name={details.forward.name} volume={details.rxn.forward} />
-                        {/* RERVERSE */}
-                        <MixReagent name={details.reverse.name} volume={details.rxn.reverse} />
-                        {/* PROBE */}
-                        {details.probe ? <MixReagent name={details.probe.name} volume={details.rxn.probe} /> : null}
+                        {/* FORWARD/RERVERSE*/}
+                        {details.groups.map(grupo =>
+                            <React.Fragment key={grupo.target}>
+                                <MixReagent  name={grupo.forward.name} volume={grupo.forward.volume} />
+                                <MixReagent name={grupo.reverse.name} volume={grupo.reverse.volume} />
+                                {grupo.probe ? <MixReagent name={grupo.probe.name} volume={grupo.probe.volume} /> : null}
+                            </React.Fragment>
+                        )}
                         {/* DNA */}
                         <MixReagent name='DNA' volume={details.rxn.DNA} />
                         {/* BSA */}
@@ -91,11 +72,15 @@ export const MultiPlex = ({ details }) => {
                         <hr />
                         {/* Total */}
                         <MixReagent name='Total' volume={details.rxn.total} />
-                        <div>[primers]-final= {details.forward.primer_conc}</div>
-                        {details.probe ? <div>[probe]-final= {details.probe.probe_conc}</div> : null}
+                        {details.groups.map(grupo =>
+                            <React.Fragment key={grupo.target}><div key={grupo.target}>[{grupo.forward.name}]-final= {grupo.forward.primer_conc}</div>
+                                <div>[{grupo.reverse.name}]-final= {grupo.reverse.primer_conc}</div>
+                                {grupo.probe ? <div>[{grupo.probe.name}]-final= {grupo.probe.probe_conc}</div> : null}
+                            </React.Fragment>
+                        )}
+
                     </div>
                 </div>
-
 
                 {/* CICLADO-------------------------------------------------------------------------------------------------------------- */}
                 <div className="row col-8 col-lg-5 container-fluid mx-0 justify-content-center ">
@@ -125,7 +110,7 @@ export const MultiPlex = ({ details }) => {
                                 <div className='justify-sef-start stepTitles fs-2 ms-5 mb-3 my-auto'>
                                     STEP 3
                                 </div>
-                                <CicleStep temperature={details.cicling.step_three.temperature} time={details.cicling.step_three.time }/>
+                                <CicleStep temperature={details.cicling.step_three.temperature} time={details.cicling.step_three.time} />
                             </> : null}
 
                         {details.cicling.melting ? <><div className='justify-sef-start stepTitles fs-2 ms-5 mb-3'>
@@ -140,6 +125,9 @@ export const MultiPlex = ({ details }) => {
                         <div className='fs-5 text-center'>Nombre: {details.cicling.name}</div>
                     </div>
                 </div>
+                
+
+
             </div>
             {details.notes}
         </div>

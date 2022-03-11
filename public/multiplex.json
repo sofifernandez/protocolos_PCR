@@ -8,61 +8,55 @@
         "target_gene": "varios",
         "groups": [
             {
-                "group_1": {
-                    "target": "B. bovis",
-                    "size": "100 pb",
-                    "forward": {
-                        "name": "F1",
-                        "seq": "ATCTCCGTTGCACTCTTTGC",
-                        "primer_conc": "1 uM",
-                        "volume":1
-                    },
-                    "reverse": {
-                        "name": "R1",
-                        "seq": "ACCATCATCATCATCGTCCA",
-                        "primer_conc": "1 uM",
-                        "volume":1
-                    },
-                    "probe": false
-                }
+                "target": "B. bovis",
+                "size": "100 pb",
+                "forward": {
+                    "name": "F1",
+                    "seq": "ATCTCCGTTGCACTCTTTGC",
+                    "primer_conc": "1 uM",
+                    "volume": 1
+                },
+                "reverse": {
+                    "name": "R1",
+                    "seq": "ACCATCATCATCATCGTCCA",
+                    "primer_conc": "1 uM",
+                    "volume": 1
+                },
+                "probe": false
             },
             {
-                "group_2": {
-                    "target": "B. bigemina",
-                    "size": "100 pb",
-                    "forward": {
-                        "name": "F1",
-                        "seq": "ATCTCCGTTGCACTCTTTGC",
-                        "primer_conc": "1 uM",
-                        "volume":1
-                    },
-                    "reverse": {
-                        "name": "R1",
-                        "seq": "ACCATCATCATCATCGTCCA",
-                        "primer_conc": "1 uM",
-                        "volume":1
-                    },
-                    "probe": false
-                }
+                "target": "B. bigemina",
+                "size": "100 pb",
+                "forward": {
+                    "name": "F1",
+                    "seq": "ATCTCCGTTGCACTCTTTGC",
+                    "primer_conc": "1 uM",
+                    "volume": 1
+                },
+                "reverse": {
+                    "name": "R1",
+                    "seq": "ACCATCATCATCATCGTCCA",
+                    "primer_conc": "1 uM",
+                    "volume": 1
+                },
+                "probe": false
             },
             {
-                "group_3": {
-                    "target": "A. marginale",
-                    "size": "100 pb",
-                    "forward": {
-                        "name": "F1",
-                        "seq": "ATCTCCGTTGCACTCTTTGC",
-                        "primer_conc": "1 uM",
-                        "volume":1
-                    },
-                    "reverse": {
-                        "name": "R1",
-                        "seq": "ACCATCATCATCATCGTCCA",
-                        "primer_conc": "1 uM",
-                        "volume":1
-                    },
-                    "probe": false
-                }
+                "target": "A. marginale",
+                "size": "100 pb",
+                "forward": {
+                    "name": "F1",
+                    "seq": "ATCTCCGTTGCACTCTTTGC",
+                    "primer_conc": "1 uM",
+                    "volume": 1
+                },
+                "reverse": {
+                    "name": "R1",
+                    "seq": "ACCATCATCATCATCGTCCA",
+                    "primer_conc": "1 uM",
+                    "volume": 1
+                },
+                "probe": false
             }
         ],
         "rxn": {

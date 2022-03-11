@@ -160,7 +160,10 @@ export const Nested = ({ details }) => {
                         <hr />
                         {/* Total */}
                         <MixReagent name='Total' volume={details.rxn_2.total} />
-                        <div>[primers]-final= {details.forward_2.primer_conc}</div>
+                        <div>[{details.forward_1.name}]-final= {details.forward_1.primer_conc}</div>
+                        <div>[{details.reverse_1.name}]-final= {details.reverse_1.primer_conc}</div>
+                        <div>[{details.forward_2.name}]-final= {details.forward_2.primer_conc}</div>
+                        <div>[{details.reverse_2.name}]-final= {details.reverse_2.primer_conc}</div>
                         {details.probe ? <div>[probe]-final= {details.probe.probe_conc}</div> : null}
                     </div>
                 </div>

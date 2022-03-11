@@ -72,8 +72,9 @@ export const SinglePlex = ({details}) => {
                         <hr />
                         {/* Total */}
                         <MixReagent name='Total' volume={details.rxn.total} />
-                        <div>[primers]-final= {details.forward.primer_conc}</div>
-                        {details.probe ? <div>[probe]-final= {details.probe.probe_conc}</div> : null}
+                        <div>[{details.forward.name}]-final= {details.forward.primer_conc}</div>
+                        <div>[{details.reverse.name}]-final= {details.reverse.primer_conc}</div>
+                        {details.probe ? <div>[{details.probe.name}]-final= {details.probe.probe_conc}</div> : null}
                     </div>
                 </div>
 
