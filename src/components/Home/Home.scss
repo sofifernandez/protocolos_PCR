@@ -8,6 +8,7 @@
 .searchBox {
   position: relative;
   display: flex;
+  height: 70px;
   padding: 2px 4px 2px 16px;
   justify-content: space-between;
   align-items: center;
@@ -16,6 +17,10 @@
   background-color: #fff;
   text-decoration: none;
   //box-shadow: 5px 5px #888888;
+}
+
+.inputSearch {
+  height: 40px;
 }
 
 .pinkCircle {

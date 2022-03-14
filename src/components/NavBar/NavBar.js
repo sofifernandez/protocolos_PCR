@@ -9,33 +9,31 @@ export const NavBar = () => {
             <div className="heroline"></div>
             <h1 className="animate__animated animate__swing">Protocolos de Biología Molecular (PSA, INIA-LE)</h1>
             <div className="header-category">
-                <div className="header-links">
+                <NavLink to={'/'} className={({ isActive }) => (isActive ? "activated-link" : "header-links")}>
                     <div className="header-category-tag">
-                        <NavLink to={'/'}>Home</NavLink>
+                       Home
                     </div>
                     <div className="header-tag-circle yellow">
                     </div>
-                </div>
+                </NavLink>
             </div>
-
             <div className="header-category">
-                <a href="#ui-kits" className="header-links">
+                <NavLink to={'/type/PCR'} className={({ isActive }) => (isActive ? "activated-link" : "header-links")}>
                     <div className="header-category-tag">
-                        PCR
+                       PCR
                     </div>
                     <div className="header-tag-circle skyblue">
                     </div>
-                </a>
+                </NavLink>
             </div>
-            
             <div className="header-category">
-                <a href="#ui-kits" className="header-links">
+                <NavLink to={'/type/qPCR'} className={({ isActive }) => (isActive ? "activated-link" : "header-links")}>
                     <div className="header-category-tag">
-                        qPCR
+                       qPCR
                     </div>
                     <div className="header-tag-circle red">
                     </div>
-                </a>
+                </NavLink>
             </div>
         </header>
 

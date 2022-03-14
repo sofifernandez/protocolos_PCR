@@ -1,28 +1,38 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { CardPCR } from '../CardPCR/CardPCR'
 import './Home.scss'
 
 
 export const Home = () => {
+    const { typePCR } = useParams();
     const [cards, setCards] = useState([]);
     const [search, setSearch] = useState()
 
 
     useEffect(() => {
         async function fetchMyAPI() {
-            const simplePCR = await fetch('protocolos.json').then(res => res.json())
-            const multiplexPCR = await fetch('multiplex.json').then(res => res.json())
-            const nestedPCR= await fetch('nested.json').then(res => res.json())
-            setCards(simplePCR.concat(multiplexPCR, nestedPCR))
+            const simplePCR = await fetch(`${process.env.PUBLIC_URL}/protocolos.json`).then(res => res.json())
+            const nestedPCR = await fetch(`${process.env.PUBLIC_URL}/nested.json`).then(res => res.json())
+            const multiplexPCR = await fetch(`${process.env.PUBLIC_URL}/multiplex.json`).then(res => res.json())
+            const arrayTot = await simplePCR.concat(multiplexPCR, nestedPCR)
+            if (typePCR === "PCR") {
+                setCards(arrayTot.filter(pcr=>pcr.type_1==="PCR"))
+            } else if (typePCR === "qPCR") {
+                setCards(arrayTot.filter(pcr=>pcr.type_1==="qPCR"))
+            } else {
+                setCards(arrayTot)
+            }
         }
         fetchMyAPI()
-    }, [])
+    }, [typePCR])
+
 
     const handleChange = (event) => {
         setSearch(event.target.value)
     }
 
-    console.log(cards)
+
     if (!cards) return null;
     return (
         <div className="row justify-content-center container-fluid mx-auto px-auto">
@@ -30,7 +40,7 @@ export const Home = () => {
             {/* SEARCHBOX----------------------------------------------------------- */}
             <div className="row mb-5 justify-content-center">
                 <div className=" col-10 col-sm-8 col-md-5 searchBox">
-                    <input className="col-10" type="text" name="busqueda" id="" placeholder="Buscar" onChange={handleChange} />
+                    <input className="col-10 inputSearch" type="text" name="busqueda" id="" placeholder="Buscar" onChange={handleChange} />
                     <div className="header-tag-circle pinkCircle">
                     </div>
                 </div>
@@ -84,4 +94,5 @@ export const Home = () => {
         </div>
 
     )
+
 }

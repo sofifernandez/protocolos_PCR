@@ -11,7 +11,7 @@ export const SinglePlex = ({details}) => {
     return (
         <div className="row container-fluid mx-0 justify-content-center">
             {/* GENERAL DATA CARD ----------------------------------------------------------------------------------------------------------*/}
-            <div className="row col-12 col-md-9 col-lg-6 fs-1 pb-3 mb-5 detailCard">
+            <div className="row col-12 col-md-9 col-xl-8 fs-1 pb-3 mb-5 detailCard">
                 <p className='text-center'>{details.target_microorganism}</p>
                 <div>
                     <div className='row mb-2 justify-content-center'>
@@ -80,7 +80,7 @@ export const SinglePlex = ({details}) => {
 
 
                 {/* CICLADO-------------------------------------------------------------------------------------------------------------- */}
-                <div className="row col-8 col-lg-5 container-fluid mx-0 justify-content-center ">
+                <div className="row col-12 col-sm-9 col-md-8 col-lg-5 container-fluid mx-0 justify-content-center ">
                     <div className="row fs-1 pb-3 mb-5 cicleCard">
                         <div className='text-center cardTitle fs-1 col-12 mt-3'>
                             Ciclado

@@ -25,7 +25,7 @@ export const Nested = ({ details }) => {
                         <div className='col-12 col-sm-6 ms-sm-auto text-center propertySize'>Tamaño:</div>
                         <div className='col-12 col-sm-6 ms-sm-auto fs-3 text-center text-sm-start propertyValue'>{details.target_size}</div>
                     </div>
-                    <div className='row mb-5 justify-content-center'>
+                    <div className='row mb-4 justify-content-center'>
                         <div className='col-12 col-sm-6 ms-sm-auto text-center propertyRef'>Ref:</div>
                         <div className='col-12 col-sm-6 ms-sm-auto fs-3 text-center text-sm-start propertyValue'>
                             <a href={details.reference_http}>{details.reference.substring(0, 8 + details.reference.indexOf('al. '))}</a>
@@ -34,22 +34,22 @@ export const Nested = ({ details }) => {
                     <div className="heroline"></div>
                     <div className="text-center font-weight-bold ronda">RONDA 1:</div>
                     <div className='row mb-2 justify-content-center'>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#FFDB59" }}>{details.forward_1.name}:</div>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{details.forward_1.seq}</div>
+                        <div className='col-12 col-lg-6 my-auto text-center primerProps' style={{ backgroundColor: "#FFDB59" }}>{details.forward_1.name}:</div>
+                        <div className='col-12 col-lg-6 my-auto fs-5 text-center propertyValue'>{details.forward_1.seq}</div>
                     </div>
                     <div className='row mb-2 justify-content-center'>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#FFDB59" }}>{details.reverse_1.name}:</div>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{details.reverse_1.seq}</div>
+                        <div className='col-12 col-lg-6 my-auto text-center primerProps' style={{ backgroundColor: "#FFDB59" }}>{details.reverse_1.name}:</div>
+                        <div className='col-12 col-lg-6 my-auto fs-5 text-center propertyValue'>{details.reverse_1.seq}</div>
                     </div>
                     <div className="heroline"></div>
                     <div className="text-center ronda">RONDA 2:</div>
                     <div className='row mb-2 justify-content-center'>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#A962E1" }}>{details.forward_2.name}:</div>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{details.forward_2.seq}</div>
+                        <div className='col-12 col-lg-6 my-auto text-center primerProps' style={{ backgroundColor: "#A962E1" }}>{details.forward_2.name}:</div>
+                        <div className='col-12 col-lg-6 my-auto fs-5 text-center  propertyValue'>{details.forward_2.seq}</div>
                     </div>
                     <div className='row mb-2 justify-content-center'>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#A962E1" }}>{details.reverse_2.name}:</div>
-                        <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{details.reverse_2.seq}</div>
+                        <div className='col-12 col-lg-6  my-auto text-center primerProps' style={{ backgroundColor: "#A962E1" }}>{details.reverse_2.name}:</div>
+                        <div className='col-12 col-lg-6  my-auto fs-5 text-center propertyValue'>{details.reverse_2.seq}</div>
                     </div>
 
                 </div>
@@ -89,7 +89,7 @@ export const Nested = ({ details }) => {
 
 
                 {/* CICLADO-------------------------------------------------------------------------------------------------------------- */}
-                <div className="row col-8 col-lg-5 container-fluid mx-0 justify-content-center ">
+                <div className="row col-12 col-sm-9 col-md-8 col-lg-5 container-fluid mx-0 justify-content-center ">
                     <div className="row fs-1 pb-3 mb-5 cicleCard">
                         <div className='text-center cardTitle fs-1 col-12 mt-3'>
                             Ciclado
@@ -170,7 +170,7 @@ export const Nested = ({ details }) => {
 
 
                 {/* CICLADO- 2------------------------------------------------------------------------------------------------------------- */}
-                <div className="row col-8 col-lg-5 container-fluid mx-0 justify-content-center ">
+                <div className="row col-12 col-sm-9 col-md-8 col-lg-5 container-fluid mx-0 justify-content-center ">
                     <div className="row fs-1 pb-3 mb-5 cicleCard">
                         <div className='text-center cardTitle fs-1 col-12 mt-3'>
                             Ciclado

@@ -5,16 +5,16 @@ export const CardPCR = ({card}) => {
    
     if (!card) return null;
     return (
-        <div className='row col-12 mx-auto col-md-6 col-lg-5 justify-content-center'>
+        <div className='row col-12 col-sm-10 col-md-6 col-lg-5 justify-content-center mx-auto px-lg-0'>
             {/* -------------------------------------------------------------------------- */
             /*                                    CARD                                    */
             /* -------------------------------------------------------------------------- */}
-            <div className='mainCard  justify-content-center row mb-5'>
+            <div className='mainCard justify-content-center row mb-5'>
                 <NavLink to={`/protocolo/${card.id}`}><div className='text-center cardName fs-3 col-12 my-3'>
                     {card.target_microorganism}
                 </div></NavLink>
                 {/* CARD GENE */}
-                <div className='species col-12 row justify-content-evenly mb-3'>
+                <div className='species col-12 row justify-content-evenly mb-3 px-0'>
                     <div className='col-7 propertyTitle row'>
                         <div className='col-6 targetTitleCircle my-auto'>
                         </div>
@@ -27,7 +27,7 @@ export const CardPCR = ({card}) => {
                     </div>
                 </div>
                 {/* CARD TYPE */}
-                <div className='status col-12 row justify-content-evenly mb-3'>
+                <div className='status col-12 row justify-content-evenly mb-3 px-0'>
                     <div className='col-7 propertyTitle row'>
                         <div className='col-6 typeTitleCircle my-auto'>
                         </div>
@@ -36,11 +36,11 @@ export const CardPCR = ({card}) => {
                         </div>
                     </div>
                     <div className='col-4 fs-4'>
-                        {card.type_1}
+                        {card.type_1}-{card.type_2}
                     </div>
                 </div>
                 {/* CARD REF */}
-                <div className='species col-12 row justify-content-evenly mb-3'>
+                <div className='species col-12 row justify-content-evenly mb-3 px-0'>
                     <div className='col-7 propertyTitle row'>
                         <div className='col-6 refTitleCircle my-auto'>
                         </div>

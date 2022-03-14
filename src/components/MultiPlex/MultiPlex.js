@@ -22,7 +22,7 @@ export const MultiPlex = ({ details }) => {
                         <div className='col-12 col-sm-6 ms-sm-auto text-center propertyTarget'>Target:</div>
                         <div className='col-12 col-sm-6 ms-sm-auto fs-3 text-center text-sm-start propertyValue '>{details.target_gene}</div>
                     </div>
-                    <div className='row mb-5 justify-content-center'>
+                    <div className='row mb-3 justify-content-center'>
                         <div className='col-12 col-sm-6 ms-sm-auto text-center propertyRef'>Ref:</div>
                         <div className='col-12 col-sm-6 ms-sm-auto fs-3 text-center text-sm-start propertyValue'>
                             <a href={details.reference_http}>{details.reference.substring(0, 8 + details.reference.indexOf('al. '))}</a>
@@ -31,14 +31,14 @@ export const MultiPlex = ({ details }) => {
                     {details.groups.map(grupo =>
                         <div key={grupo.target}>
                             <div className="heroline"></div>
-                            <div className="text-center font-weight-bold ronda">{grupo.target}: { grupo.size}</div>
+                            <div className="text-center fs-3 targetMiltiplex">{grupo.target}: { grupo.size}</div>
                             <div className='row mb-2 justify-content-center'>
-                                <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#E964BB" }}>{grupo.forward.name}:</div>
-                                <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{grupo.forward.seq}</div>
+                                <div className='col-12 col-lg-6 my-auto text-center primerProps' style={{ backgroundColor: "#E964BB" }}>{grupo.forward.name}:</div>
+                                <div className='col-12 col-lg-6 my-auto fs-5 text-center text-lg-start propertyValue'>{grupo.forward.seq}</div>
                             </div>
                             <div className='row mb-2 justify-content-center'>
-                                <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#FFDB59" }}>{grupo.reverse.name}:</div>
-                                <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{grupo.reverse.seq}</div>
+                                <div className='col-12 col-lg-6 my-auto text-center primerProps' style={{ backgroundColor: "#FFDB59" }}>{grupo.reverse.name}:</div>
+                                <div className='col-12 col-lg-6 my-auto fs-5 text-center text-lg-start propertyValue'>{grupo.reverse.seq}</div>
                             </div>
                         </div>
                     )}
@@ -83,7 +83,7 @@ export const MultiPlex = ({ details }) => {
                 </div>
 
                 {/* CICLADO-------------------------------------------------------------------------------------------------------------- */}
-                <div className="row col-8 col-lg-5 container-fluid mx-0 justify-content-center ">
+                <div className="row col-12 col-sm-9 col-md-8 col-lg-5 container-fluid mx-0 justify-content-center ">
                     <div className="row fs-1 pb-3 mb-5 cicleCard">
                         <div className='text-center cardTitle fs-1 col-12 mt-3'>
                             Ciclado
