@@ -5,7 +5,7 @@ export const CardPCR = ({card}) => {
    
     if (!card) return null;
     return (
-        <div className='row col-12 col-sm-10 col-md-6 col-lg-5 justify-content-center mx-auto px-lg-0'>
+        <div className='row col-12 col-sm-10 col-md-6 col-lg-5 justify-content-center mx-auto px-0'>
             {/* -------------------------------------------------------------------------- */
             /*                                    CARD                                    */
             /* -------------------------------------------------------------------------- */}
@@ -14,7 +14,7 @@ export const CardPCR = ({card}) => {
                     {card.target_microorganism}
                 </div></NavLink>
                 {/* CARD GENE */}
-                <div className='species col-12 row justify-content-evenly mb-3 px-0'>
+                <div className='col-12 row justify-content-evenly mb-3 px-0'>
                     <div className='col-7 propertyTitle row'>
                         <div className='col-6 targetTitleCircle my-auto'>
                         </div>
@@ -27,7 +27,7 @@ export const CardPCR = ({card}) => {
                     </div>
                 </div>
                 {/* CARD TYPE */}
-                <div className='status col-12 row justify-content-evenly mb-3 px-0'>
+                <div className='col-12 row justify-content-evenly mb-3 px-0'>
                     <div className='col-7 propertyTitle row'>
                         <div className='col-6 typeTitleCircle my-auto'>
                         </div>
@@ -40,7 +40,7 @@ export const CardPCR = ({card}) => {
                     </div>
                 </div>
                 {/* CARD REF */}
-                <div className='species col-12 row justify-content-evenly mb-3 px-0'>
+                <div className='col-12 row justify-content-evenly mb-3 px-0'>
                     <div className='col-7 propertyTitle row'>
                         <div className='col-6 refTitleCircle my-auto'>
                         </div>

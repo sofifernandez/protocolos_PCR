@@ -35,7 +35,7 @@ export const Home = () => {
 
     if (!cards) return null;
     return (
-        <div className="row justify-content-center container-fluid mx-auto px-auto">
+        <div className="row justify-content-center container-fluid mx-auto px-0">
 
             {/* SEARCHBOX----------------------------------------------------------- */}
             <div className="row mb-5 justify-content-center">
