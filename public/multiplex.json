@@ -1,6 +1,6 @@
 [
     {
-        "id": "134",
+        "id": "m1",
         "target_microorganism": "Hemoparásitos",
         "target_group": "Múltiple",
         "type_1": "PCR",
@@ -9,52 +9,52 @@
         "groups": [
             {
                 "target": "B. bovis",
-                "size": "100 pb",
+                "size": "356 pb",
                 "forward": {
-                    "name": "F1",
-                    "seq": "ATCTCCGTTGCACTCTTTGC",
-                    "primer_conc": "1 uM",
-                    "volume": 1
+                    "name": "BbovF",
+                    "seq": "CACGAGGAAGGAACTACCGATGTTGA",
+                    "primer_conc": "0.2 uM",
+                    "volume": 0.5
                 },
                 "reverse": {
-                    "name": "R1",
-                    "seq": "ACCATCATCATCATCGTCCA",
-                    "primer_conc": "1 uM",
-                    "volume": 1
+                    "name": "BbovR",
+                    "seq": "CCAAGGAGCTTCAACGTACGAGGTCA",
+                     "primer_conc": "0.2 uM",
+                    "volume": 0.5
                 },
                 "probe": false
             },
             {
                 "target": "B. bigemina",
-                "size": "100 pb",
+                "size": "400 pb",
                 "forward": {
-                    "name": "F1",
-                    "seq": "ATCTCCGTTGCACTCTTTGC",
-                    "primer_conc": "1 uM",
-                    "volume": 1
+                    "name": "BbigF",
+                    "seq": "AGCTTGCTTTCACAACTCGCC",
+                    "primer_conc": "0.2 uM",
+                    "volume": 0.5
                 },
                 "reverse": {
-                    "name": "R1",
-                    "seq": "ACCATCATCATCATCGTCCA",
-                    "primer_conc": "1 uM",
-                    "volume": 1
+                    "name": "BbigR",
+                    "seq": "TTGGTGCTTTGACCGACGACAT",
+                     "primer_conc": "0.2 uM",
+                    "volume": 0.5
                 },
                 "probe": false
             },
             {
                 "target": "A. marginale",
-                "size": "100 pb",
+                "size": "458 pb",
                 "forward": {
-                    "name": "F1",
-                    "seq": "ATCTCCGTTGCACTCTTTGC",
-                    "primer_conc": "1 uM",
-                    "volume": 1
+                    "name": "AmF",
+                    "seq": "GCATAGCCTCCGCGTCTTTC",
+                    "primer_conc": "0.2 uM",
+                    "volume": 0.5
                 },
                 "reverse": {
-                    "name": "R1",
-                    "seq": "ACCATCATCATCATCGTCCA",
-                    "primer_conc": "1 uM",
-                    "volume": 1
+                    "name": "AmR",
+                    "seq": "TCCTCGCCTTGGCCCTCAGA",
+                    "primer_conc": "0.2 uM",
+                    "volume": 0.5
                 },
                 "probe": false
             }
@@ -62,25 +62,22 @@
         "rxn": {
             "buffer": {
                 "name": "MangoMix",
-                "volume": 10
+                "volume": 12.5
             },
-            "forward_1": 2,
-            "reverse_1": 2,
-            "forward_2": 2,
-            "reverse_2": 2,
-            "forward_3": 2,
-            "reverse_3": 2,
+            "forward_1": 0.5,
+            "reverse_1": 0.5,
+            "forward_2": 0.5,
+            "reverse_2": 0.5,
+            "forward_3": 0.5,
+            "reverse_3": 0.5,
             "probe": 0,
             "DNA": 2,
-            "H2O": 3,
-            "total": 20,
-            "BSA": {
-                "conc": "0.1%",
-                "volumen": 1
-            }
+            "H2O": 7.5,
+            "total": 25,
+            "BSA": false
         },
         "cicling": {
-            "name": "blabla",
+            "name": "MultiHemoP",
             "step_one": {
                 "time": "5 min",
                 "temperature": "95 °C"

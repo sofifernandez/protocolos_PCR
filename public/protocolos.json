@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": "s1",
         "target_microorganism": "Leptospira spp.",
         "target_group": "Bacteria",
         "type_1": "PCR",
@@ -68,7 +68,7 @@
         "notes": ""
     },
     {
-        "id": "2",
+        "id": "s2",
         "target_microorganism": "Leptospira spp.",
         "target_group": "Bacteria",
         "type_1": "qPCR",
@@ -134,7 +134,7 @@
         "notes": ""
     },
     {
-        "id": "3",
+        "id": "s3",
         "target_microorganism": "Neospora caninum",
         "target_group": "Eucariota",
         "type_1": "PCR",
@@ -199,7 +199,7 @@
         "notes": "Se probó en qPCR y funciona. Misma concentración de primers con el ciclado: 95°C -> 10 min | 94°C -> 30s | 62°C -> 1min | x40"
     },
     {
-        "id": "10",
+        "id": "s4",
         "target_microorganism": "Apicomplejos (Neospora, Toxo, Sacro y Hamm.)",
         "target_group": "Eucariota",
         "type_1": "PCR",
@@ -265,7 +265,7 @@
         "notes": ""
     },
     {
-        "id": "4",
+        "id": "s5",
         "target_microorganism": "Cryptosporidium spp.",
         "target_group": "Eucariota",
         "type_1": "qPCR",
@@ -331,7 +331,7 @@
         "notes": ""
     },
     {
-        "id": "5",
+        "id": "s6",
         "target_microorganism": "Dichelobacter nodosus",
         "target_group": "Bacteria",
         "type_1": "qPCR",
@@ -394,7 +394,7 @@
         "notes": ""
     },
     {
-        "id": "6",
+        "id": "s7",
         "target_microorganism": "Mycobacterium avium sb paratuberculosis",
         "target_group": "Bacteria",
         "type_1": "qPCR",
@@ -460,7 +460,7 @@
         "notes": ""
     },
     {
-        "id": "7",
+        "id": "s8",
         "target_microorganism": "Mycobacterium avium sb paratuberculosis",
         "target_group": "Bacteria",
         "type_1": "qPCR",
@@ -526,7 +526,7 @@
         "notes": ""
     },
     {
-        "id": "8",
+        "id": "s9",
         "target_microorganism": "Toxoplasma gondii",
         "target_group": "Eucariota",
         "type_1": "PCR",
@@ -591,7 +591,75 @@
         "notes": ""
     },
     {
-        "id": "9",
+        "id": "s11",
+        "target_microorganism": "Salmonella spp.",
+        "target_group": "Bacteria",
+        "type_1": "qPCR",
+        "type_2": "singleplex",
+        "target_gene": "invA",
+        "target_size": "284 pb",
+        "forward": {
+            "name": "invA-F",
+            "seq": "GTGAAATTATCGCCACGTTCGGGCAA"
+        },
+        "reverse": {
+            "name": "invA-R",
+            "seq": "TCATCGCACCGTCAAAGGAACC"
+        },
+        "probe": false,
+        "primer_conc": "",
+        
+        "rxn": {
+            "buffer": {
+                "name": "Buffer(10x) Invitrogen ",
+                "volume": 2.5
+            },
+            "mgcl2": 0.75,
+            "dntps": 0.5,
+            "taq": 0.2,
+            "forward": 1,
+            "reverse": 1,
+            "probe": 0,
+            "DNA": 2,
+            "H2O": 17.05,
+            "total": 25,
+            "BSA": false
+        },
+        "cicling": {
+            "name": "16S",
+            "step_one": {
+                "time": "5 min",
+                "temperature": "95 °C"
+            },
+            "step_two": {
+                "cicles": 35,
+                "step_a": {
+                    "time": "45 seg",
+                    "temperature": "94 °C"
+                },
+                "step_b": {
+                    "time": "1 min",
+                    "temperature": "58 °C"
+                },
+                "step_c": {
+                    "time": "1.5 min",
+                    "temperature": "72 °C"
+                }
+            },
+            "step_three": {
+                "time": "7 min",
+                "temperature": "72 °C"
+            },
+            "melting": false
+        },
+        "reference": "Lane et al. 1991. 16S/23S rRNA sequencing. Page 115 in: Nucleic Acid Techniques in Bacterial Systematics",
+        "reference_http": "",
+        "positive_control": "strain",
+        "image": "",
+        "notes": ""
+    },
+     {
+        "id": "s10",
         "target_microorganism": "BACTERIA",
         "target_group": "Bacteria",
         "type_1": "PCR",

@@ -1,6 +1,6 @@
 [
     {
-        "id": "135344",
+        "id": "n1",
         "target_microorganism": "Virus de la leucosis bovina",
         "target_group": "Virus",
         "type_1": "PCR",
@@ -8,24 +8,24 @@
         "target_gene": "polB",
         "target_size": "474 bp",
         "forward_1": {
-            "name": "F1",
-            "seq": "ATCTCCGTTGCACTCTTTGC",
-            "primer_conc": "1 uM"
+            "name": "Env5521",
+            "seq": "GCGAGGCCGGGTCCAGAGCTGG",
+            "primer_conc": "uM"
         },
         "reverse_1": {
-            "name": "R1",
-            "seq": "ACCATCATCATCATCGTCCA",
-            "primer_conc": "1 uM"
+            "name": "Env5099",
+            "seq": "CCCACAAGGGCGGCGCCGGTTT",
+            "primer_conc": "uM"
         },
         "forward_2": {
-            "name": "F2",
-            "seq": "ATCTCCGTTGCACTCTTTGC",
-            "primer_conc": "1 uM"
+            "name": "Env5032",
+            "seq": "TCTGTGCCAAGTCTCCCAGATA",
+            "primer_conc": "uM"
         },
         "reverse_2": {
-            "name": "R2",
-            "seq": "ACCATCATCATCATCGTCCA",
-            "primer_conc": "1 uM"
+            "name": "Env5608",
+            "seq": "AACAACAACCTCTGGGAAGGGT",
+            "primer_conc": "uM"
         },
         "rxn_1": {
             "buffer": {
@@ -37,10 +37,7 @@
             "DNA": 2,
             "H2O": 3,
             "total": 20,
-            "BSA": {
-                "conc": "0.1%",
-                "volumen": 1
-            }
+            "BSA": false
         },
         "rxn_2": {
             "buffer": {
