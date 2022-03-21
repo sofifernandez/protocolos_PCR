@@ -38,6 +38,10 @@
   border: solid 2px black;
 }
 
+.propertyValue {
+  overflow-wrap: break-word;
+}
+
 // MASTER MIX-------------------------------------------------------------------------------------------------------------------------------
 .masterMixCard {
   background-color: #e5f9e9;
