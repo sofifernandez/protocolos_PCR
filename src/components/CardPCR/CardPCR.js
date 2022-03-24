@@ -48,7 +48,7 @@ export const CardPCR = ({card}) => {
                             Referencia
                         </div>
                     </div>
-                    <div className='col-4 fs-6' >
+                    <div className='col-4 fs-6 my-auto' >
                         <a href={card.reference_http}>{card.reference.substring(0, 8+ card.reference.indexOf('al. '))}</a>
                     </div>
                 </div>

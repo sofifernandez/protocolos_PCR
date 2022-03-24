@@ -6,7 +6,7 @@ export const CicleStep = ({temperature, time}) => {
             <div className='col-3 circleCicle my-auto'>
             </div>
             <div className='col-9 fs-3 text-center my-auto'>
-                {temperature} | {time}
+                {temperature} --{'>'} {time}
             </div>
         </div>
     )

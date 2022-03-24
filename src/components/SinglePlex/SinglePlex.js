@@ -41,8 +41,8 @@ export const SinglePlex = ({details}) => {
                         <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{details.reverse.seq}</div>
                     </div>
                     {details.probe ? <div className='row mb-2 justify-content-center'>
-                        <div className='col-12 col-lg-6 my-auto  my-auto text-center primerProps' style={{backgroundColor:"#a962e1"}}>{details.probe.name}:</div>
-                        <div className='col-12 col-lg-6 my-auto  my-auto fs-5 text-center propertyValue'>{details.probe.seq}</div>
+                        <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{backgroundColor:"#a962e1"}}>{details.probe.name}:</div>
+                        <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{details.probe.seq}</div>
                     </div> : null}
                 </div>
             </div>
@@ -57,6 +57,10 @@ export const SinglePlex = ({details}) => {
                         <div className='mb-3 text-center'>Primer y sondas a 10uM</div>
                         {/* BUFFER */}
                         <MixReagent name={details.rxn.buffer.name} volume={details.rxn.buffer.volume} />
+                        {/* MgCl2 */}
+                        {details.rxn.mgcl2 ? <MixReagent name='MgCl2' volume={details.rxn.mgcl2} /> : null}
+                        {/* dNTPs */}
+                        {details.rxn.dntps ? <MixReagent name='dNTPs' volume={details.rxn.dntps} /> : null}
                         {/* FORWARD*/}
                         <MixReagent name={details.forward.name} volume={details.rxn.forward} />
                         {/* RERVERSE */}
@@ -66,7 +70,7 @@ export const SinglePlex = ({details}) => {
                         {/* DNA */}
                         <MixReagent name='DNA' volume={details.rxn.DNA} />
                         {/* BSA */}
-                        {details.BSA ? <MixReagent name={`BSA ${details.rxn.BSA.conc}`} volume={details.rxn.BSA.volumen} /> : null}
+                        {details.rxn.BSA ? <MixReagent name={`BSA ${details.rxn.BSA.conc}`} volume={details.rxn.BSA.volumen} /> : null}
                         {/* H20 */}
                         <MixReagent name='H20' volume={details.rxn.H2O} />
                         <hr />
@@ -124,6 +128,10 @@ export const SinglePlex = ({details}) => {
                 </div>
             </div>
             {details.notes}
+            {details.imagen ?
+             <div className='row justify-content-center'>
+                <img className='img-fluid imagen px-0' src={process.env.PUBLIC_URL + details.image} alt="img" />
+            </div>: null}
         </div>
     )
 }

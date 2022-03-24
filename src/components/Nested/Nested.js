@@ -8,7 +8,7 @@ export const Nested = ({ details }) => {
 
     if (!details) return null;
     return (
-        <div className="row container-fluid mx-0 justify-content-center">
+        <div className="row container-fluid mx-0 justify-content-center mb-5">
             {/* GENERAL DATA CARD ----------------------------------------------------------------------------------------------------------*/}
             <div className="row col-12 col-md-9 col-lg-6 fs-1 pb-3 mb-5 detailCard">
                 <p className='text-center'>{details.target_microorganism}</p>
@@ -67,6 +67,12 @@ export const Nested = ({ details }) => {
                         <div className='mb-3 text-center'>Primer y sondas a 10uM</div>
                         {/* BUFFER */}
                         <MixReagent name={details.rxn_1.buffer.name} volume={details.rxn_1.buffer.volume} />
+                        {/* MgCl2 */}
+                        {details.rxn_1.mgcl2 ? <MixReagent name='MgCl2' volume={details.rxn_1.mgcl2} /> : null}
+                        {/* dNTPs */}
+                        {details.rxn_1.dntps ? <MixReagent name='dNTPs' volume={details.rxn_1.dntps} /> : null}
+                        {/* BSA */}
+                        {details.rxn_1.BSA ? <MixReagent name={`BSA ${details.rxn_1.BSA.conc}`} volume={details.rxn_1.BSA.volumen} /> : null}
                         {/* FORWARD*/}
                         <MixReagent name={details.forward_1.name} volume={details.rxn_1.forward_1} />
                         {/* RERVERSE */}
@@ -75,14 +81,13 @@ export const Nested = ({ details }) => {
                         {details.probe ? <MixReagent name={details.probe.name} volume={details.rxn_1.probe} /> : null}
                         {/* DNA */}
                         <MixReagent name='DNA' volume={details.rxn_1.DNA} />
-                        {/* BSA */}
-                        {details.BSA ? <MixReagent name={`BSA ${details.rxn_1.BSA.conc}`} volume={details.rxn_1.BSA.volumen} /> : null}
                         {/* H20 */}
                         <MixReagent name='H20' volume={details.rxn_1.H2O} />
                         <hr />
                         {/* Total */}
                         <MixReagent name='Total' volume={details.rxn_1.total} />
-                        <div>[primers]-final= {details.forward_1.primer_conc}</div>
+                        <div>[{details.forward_1.name}]-final= {details.forward_1.primer_conc}</div>
+                        <div>[{details.reverse_1.name}]-final= {details.reverse_1.primer_conc}</div>
                         {details.probe ? <div>[probe]-final= {details.probe.probe_conc}</div> : null}
                     </div>
                 </div>
@@ -145,6 +150,12 @@ export const Nested = ({ details }) => {
                         <div className='mb-3 text-center'>Primer y sondas a 10uM</div>
                         {/* BUFFER */}
                         <MixReagent name={details.rxn_2.buffer.name} volume={details.rxn_2.buffer.volume} />
+                        {/* MgCl2 */}
+                        {details.rxn_2.mgcl2 ? <MixReagent name='MgCl2' volume={details.rxn_2.mgcl2} /> : null}
+                        {/* dNTPs */}
+                        {details.rxn_2.dntps ? <MixReagent name='dNTPs' volume={details.rxn_2.dntps} /> : null}
+                        {/* BSA */}
+                        {details.rxn_2.BSA ? <MixReagent name={`BSA ${details.rxn_2.BSA.conc}`} volume={details.rxn_2.BSA.volumen} /> : null}
                         {/* forward_2*/}
                         <MixReagent name={details.forward_2.name} volume={details.rxn_2.forward_2} />
                         {/* RERVERSE */}
@@ -160,8 +171,6 @@ export const Nested = ({ details }) => {
                         <hr />
                         {/* Total */}
                         <MixReagent name='Total' volume={details.rxn_2.total} />
-                        <div>[{details.forward_1.name}]-final= {details.forward_1.primer_conc}</div>
-                        <div>[{details.reverse_1.name}]-final= {details.reverse_1.primer_conc}</div>
                         <div>[{details.forward_2.name}]-final= {details.forward_2.primer_conc}</div>
                         <div>[{details.reverse_2.name}]-final= {details.reverse_2.primer_conc}</div>
                         {details.probe ? <div>[probe]-final= {details.probe.probe_conc}</div> : null}
@@ -214,6 +223,10 @@ export const Nested = ({ details }) => {
                 </div>
             </div>
             {details.notes}
+            {details.imagen ?
+             <div className='row justify-content-center'>
+                <img className='img-fluid imagen px-0' src={process.env.PUBLIC_URL + details.image} alt="img" />
+            </div>: null}
         </div>
     )
 }

@@ -9,9 +9,9 @@ export const MultiPlex = ({ details }) => {
 
     if (!details) return null;
     return (
-        <div className="row container-fluid mx-0 justify-content-center">
+        <div className="row container-fluid mx-0 justify-content-center mb-5">
             {/* GENERAL DATA CARD ----------------------------------------------------------------------------------------------------------*/}
-            <div className="row col-12 col-md-9 col-lg-6 fs-1 pb-3 mb-5 detailCard">
+            <div className="row col-12 col-md-9 col-lg-9 fs-1 pb-3 mb-5 detailCard">
                 <p className='text-center'>{details.target_microorganism}</p>
                 <div>
                     <div className='row mb-2 justify-content-center'>
@@ -33,17 +33,23 @@ export const MultiPlex = ({ details }) => {
                             <div className="heroline"></div>
                             <div className="text-center fs-3 targetMiltiplex">{grupo.target}: { grupo.size}</div>
                             <div className='row mb-2 justify-content-center'>
-                                <div className='col-12 col-lg-6 my-auto text-center primerProps' style={{ backgroundColor: "#E964BB" }}>{grupo.forward.name}:</div>
-                                <div className='col-12 col-lg-6 my-auto fs-5 text-center text-lg-start propertyValue'>{grupo.forward.seq}</div>
+                                <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#FFDB59" }}>{grupo.forward.name}:</div>
+                                <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{grupo.forward.seq}</div>
                             </div>
                             <div className='row mb-2 justify-content-center'>
-                                <div className='col-12 col-lg-6 my-auto text-center primerProps' style={{ backgroundColor: "#FFDB59" }}>{grupo.reverse.name}:</div>
-                                <div className='col-12 col-lg-6 my-auto fs-5 text-center text-lg-start propertyValue'>{grupo.reverse.seq}</div>
+                                <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#FFDB59" }}>{grupo.reverse.name}:</div>
+                                <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{grupo.reverse.seq}</div>
                             </div>
+                           {grupo.probe ?  <div className='row mb-2 justify-content-center'>
+                                <div className='col-12 col-lg-6 ms-lg-auto my-auto text-center primerProps' style={{ backgroundColor: "#E964BB" }}>{grupo.probe.name}:</div>
+                                <div className='col-12 col-lg-6 ms-lg-auto my-auto fs-5 text-center text-lg-start propertyValue'>{grupo.probe.seq}</div>
+                            </div>: null}
                         </div>
                     )}
                 </div>
             </div>
+            
+
 
             <div className='row justify-content-center'>
                 {/* MASTER MIX--------------------------------------------------------------------------------------------------------------- */}
@@ -55,6 +61,10 @@ export const MultiPlex = ({ details }) => {
                         <div className='mb-3 text-center'>Primer y sondas a 10uM</div>
                         {/* BUFFER */}
                         <MixReagent name={details.rxn.buffer.name} volume={details.rxn.buffer.volume} />
+                         {/* MgCl2 */}
+                        {details.rxn.mgcl2 ? <MixReagent name='MgCl2' volume={details.rxn.mgcl2} /> : null}
+                        {/* dNTPs */}
+                        {details.rxn.dntps ? <MixReagent name='dNTPs' volume={details.rxn.dntps} /> : null}
                         {/* FORWARD/RERVERSE*/}
                         {details.groups.map(grupo =>
                             <React.Fragment key={grupo.target}>
@@ -66,7 +76,7 @@ export const MultiPlex = ({ details }) => {
                         {/* DNA */}
                         <MixReagent name='DNA' volume={details.rxn.DNA} />
                         {/* BSA */}
-                        {details.BSA ? <MixReagent name={`BSA ${details.rxn.BSA.conc}`} volume={details.rxn.BSA.volumen} /> : null}
+                        {details.rxn.BSA ? <MixReagent name={`BSA ${details.rxn.BSA.conc}`} volume={details.rxn.BSA.volumen} /> : null}
                         {/* H20 */}
                         <MixReagent name='H20' volume={details.rxn.H2O} />
                         <hr />
@@ -130,6 +140,10 @@ export const MultiPlex = ({ details }) => {
 
             </div>
             {details.notes}
+            {details.imagen ?
+             <div className='row justify-content-center'>
+                <img className='img-fluid imagen px-0' src={process.env.PUBLIC_URL + details.image} alt="img" />
+            </div>: null}
         </div>
     )
 }

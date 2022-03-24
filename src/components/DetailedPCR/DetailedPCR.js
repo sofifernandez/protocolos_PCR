@@ -12,7 +12,7 @@ export const DetailedPCR = () => {
 
     useEffect(() => {
         const fetchJSON = async () => {
-            const singleplex = await fetch("/protocolos.json").then(data => data.json());
+            const singleplex = await fetch("/singleplex.json").then(data => data.json());
             const multiplex = await fetch("/multiplex.json").then(data => data.json());
             const nested = await fetch("/nested.json").then(data => data.json());
             const array = [].concat(singleplex, multiplex, nested);

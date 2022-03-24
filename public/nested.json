@@ -1,57 +1,69 @@
 [
     {
         "id": "n1",
-        "target_microorganism": "Virus de la leucosis bovina",
+        "target_microorganism": "Virus de la leucosis bovina (BLV)",
         "target_group": "Virus",
         "type_1": "PCR",
         "type_2": "nested",
-        "target_gene": "polB",
-        "target_size": "474 bp",
-        "forward_1": {
-            "name": "Env5521",
-            "seq": "GCGAGGCCGGGTCCAGAGCTGG",
-            "primer_conc": "uM"
-        },
-        "reverse_1": {
-            "name": "Env5099",
-            "seq": "CCCACAAGGGCGGCGCCGGTTT",
-            "primer_conc": "uM"
-        },
-        "forward_2": {
+        "target_gene": "env",
+        "target_size": "598 bp || 440 bp",
+         "forward_1": {
             "name": "Env5032",
             "seq": "TCTGTGCCAAGTCTCCCAGATA",
-            "primer_conc": "uM"
+            "primer_conc": "0.5 uM"
         },
-        "reverse_2": {
+        "reverse_1": {
             "name": "Env5608",
             "seq": "AACAACAACCTCTGGGAAGGGT",
-            "primer_conc": "uM"
+            "primer_conc": "0.5 uM"
         },
+        "forward_2": {
+            "name": "Env5521",
+            "seq": "GCGAGGCCGGGTCCAGAGCTGG",
+            "primer_conc": "0.5 uM"
+        },
+        "reverse_2": {
+            "name": "Env5099",
+            "seq": "CCCACAAGGGCGGCGCCGGTTT",
+            "primer_conc": "0.5 uM"
+        },
+       
         "rxn_1": {
             "buffer": {
-                "name": "MangoMix",
-                "volume": 10
+                "name": "Buffer(10x) Invitrogen ",
+                "volume": 2.5
             },
-            "forward_1": 2,
-            "reverse_1": 2,
-            "DNA": 2,
-            "H2O": 3,
-            "total": 20,
-            "BSA": false
+            "mgcl2": 1.5,
+            "dntps": 1,
+            "taq": 0.13,
+            "forward_1": 1.25,
+            "reverse_1": 1.25,
+            "probe": false,
+            "DNA": 1,
+            "H2O": 13.87,
+            "total": 25,
+            "BSA": {
+                "conc": "1%",
+                "volumen": 2.5
+            }
         },
         "rxn_2": {
             "buffer": {
-                "name": "MangoMix",
-                "volume": 10
+                "name": "Buffer(10x) Invitrogen ",
+                "volume": 3
             },
-            "forward_2": 2,
-            "reverse_2": 2,
-            "DNA": 2,
-            "H2O": 3,
-            "total": 20,
+            "mgcl2": 1.8,
+            "dntps": 1,
+            "taq": 0.15,
+            "forward_2": 1.5,
+            "reverse_2": 1.5,
+            "probe": false,
+            "DNA": 1,
+            "H2O": 17.55,
+            "total": 30,
             "BSA": {
-                "conc": "0.1%",
-                "volumen": 1
+                "conc": "1%",
+                "volumen": 2.5
             }
         },
         "cicling_1": {
@@ -61,14 +73,14 @@
                 "temperature": "95 °C"
             },
             "step_two": {
-                "cicles": 35,
+                "cicles": 40,
                 "step_a": {
                     "time": "30 seg",
-                    "temperature": "94 °C"
+                    "temperature": "95 °C"
                 },
                 "step_b": {
                     "time": "30 seg",
-                    "temperature": "58 °C"
+                    "temperature": "62 °C"
                 },
                 "step_c": {
                     "time": "1 min",
@@ -76,7 +88,7 @@
                 }
             },
             "step_three": {
-                "time": "5 min",
+                "time": "4 min",
                 "temperature": "72 °C"
             },
             "melting": false
@@ -88,13 +100,126 @@
                 "temperature": "95 °C"
             },
             "step_two": {
-                "cicles": 35,
+                "cicles": 40,
                 "step_a": {
                     "time": "30 seg",
-                    "temperature": "94 °C"
+                    "temperature": "95 °C"
                 },
                 "step_b": {
                     "time": "30 seg",
+                    "temperature": "70 °C"
+                },
+                "step_c": {
+                    "time": "1 min",
+                    "temperature": "72 °C"
+                }
+            },
+            "step_three": {
+                "time": "4 min",
+                "temperature": "72 °C"
+            },
+            "melting": false
+        },
+        "reference": "Fechner et al. 1996. Evaluation of Polymerase Chain Reaction (PCR) Application in Diagnosis of Bovine Leukaemia Virus (BLV) Infection in Naturally Infected Cattle",
+        "reference_http": "https://sci-hub.se/https://doi.org/10.1111/j.1439-0450.1996.tb00361.x",
+        "positive_control": "sample",
+        "image": "",
+        "notes": ""
+    },
+
+     {
+        "id": "n2",
+        "target_microorganism": "Mollicutes: M. bovis, M. bovigenitalium, U. diversum",
+        "target_group": "Bacteria",
+        "type_1": "PCR",
+        "type_2": "nested",
+        "target_gene": "ITS",
+        "target_size": "488, 404, 296 bp",
+        "forward_1": {
+            "name": "Molli-F",
+            "seq": "CCGTCAAACYATGGGAGC",
+            "primer_conc": "0.4 uM"
+        },
+        "reverse_1": {
+            "name": "Molli-R",
+            "seq": "GTGYCCCGCCMTACTCAGG",
+            "primer_conc": "0.4 uM"
+        },
+        "forward_2": {
+            "name": "Mb-F o Mbg-F o Udiv-F",
+            "seq": "(Mb-F):GTACACTTGTCTTTTATCACTATA  (Mbg-F):CGTATTGATTCATCGAGTAAT  (Udiv-F):TGGTCGGATTCTATTTAGTT",
+            "primer_conc": "0.4 uM"
+        },
+        "reverse_2": {
+            "name": "Mb-R o Mbg-R o Udiv-R",
+            "seq": "(Mb-R):AAGGTATCTCGCTTTATGTCCT  (Mbg-R):ATGGTGTCTCGCTCGACT  (Udiv-R):TGGCTACTGAGATGTTTCAC",
+            "primer_conc": "0.4 uM"
+        },
+        "rxn_1": {
+            "buffer": {
+                "name": "MangoMix",
+                "volume": 12.5
+            },
+            "forward_1": 1,
+            "reverse_1": 1,
+            "DNA": 2,
+            "H2O": 8.5,
+            "total": 25,
+            "BSA": false
+        },
+        "rxn_2": {
+            "buffer": {
+                "name": "MangoMix",
+                "volume": 12.5
+            },
+            "forward_2": 1,
+            "reverse_2": 1,
+            "DNA": 1,
+            "H2O": 9.5,
+            "total": 25,
+            "BSA": false
+        },
+        "cicling_1": {
+            "name": "Molli_1",
+            "step_one": {
+                "time": "5 min",
+                "temperature": "94 °C"
+            },
+            "step_two": {
+                "cicles": 35,
+                "step_a": {
+                    "time": "1 min",
+                    "temperature": "94 °C"
+                },
+                "step_b": {
+                    "time": "1 min",
+                    "temperature": "55 °C"
+                },
+                "step_c": {
+                    "time": "1 min",
+                    "temperature": "72 °C"
+                }
+            },
+            "step_three": {
+                "time": "7 min",
+                "temperature": "72 °C"
+            },
+            "melting": false
+        },
+        "cicling_2": {
+            "name": "Molli_2",
+            "step_one": {
+                "time": "5 min",
+                "temperature": "94 °C"
+            },
+            "step_two": {
+                "cicles": 35,
+                "step_a": {
+                    "time": "1 min",
+                    "temperature": "94 °C"
+                },
+                "step_b": {
+                    "time": "1 min",
                     "temperature": "58 °C"
                 },
                 "step_c": {
@@ -103,15 +228,15 @@
                 }
             },
             "step_three": {
-                "time": "5 min",
+                "time": "7 min",
                 "temperature": "72 °C"
             },
             "melting": false
         },
-        "reference": "Fulano et al. 2006",
-        "reference_http": "",
-        "positive_control": "strain",
-        "image": "",
-        "notes": ""
+        "reference": "Voltarelli et al. 2018. A nested-PCR strategy for molecular diagnosis of mollicutes in uncultured biological samples from cows with vulvovaginitis",
+        "reference_http": "https://sci-hub.se/https://doi.org/10.1016/j.anireprosci.2017.11.018",
+        "positive_control": "sample",
+        "image": "/img/voltarelli2018.jpg",
+        "notes": "La segunda ronda se hace con los 3 pares de primers por separado"
     }
 ]

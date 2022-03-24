@@ -292,11 +292,11 @@
                 "name": "SensiFast",
                 "volume": 10
             },
-            "forward": 2,
-            "reverse": 2,
-            "probe": 0.4,
+            "forward": 1,
+            "reverse": 1,
+            "probe": 0.2,
             "DNA": 2,
-            "H2O": 3.6,
+            "H2O": 5.8,
             "total": 20,
             "BSA": false
         },
@@ -352,16 +352,22 @@
        
         "rxn": {
             "buffer": {
-                "name": "Mangomix",
-                "volume": 12.5
+                "name": "Buffer(10x) Invitrogen ",
+                "volume": 2.5
             },
+            "mgcl2": 1.5,
+            "dntps": 0.5,
+            "taq": 0.2,
             "forward": 1,
             "reverse": 1,
             "probe": 0,
             "DNA": 2,
-            "H2O": 8.5,
+            "H2O": 13.8,
             "total": 25,
-            "BSA": false
+            "BSA": {
+                "conc": "1%",
+                "volumen": 2.5
+            }
         },
         "cicling": {
             "name": "D.nodosus_16S",
@@ -611,49 +617,42 @@
         
         "rxn": {
             "buffer": {
-                "name": "Buffer(10x) Invitrogen ",
-                "volume": 2.5
+                "name": "SYBR Green-Applied",
+                "volume": 10
             },
-            "mgcl2": 0.75,
-            "dntps": 0.5,
-            "taq": 0.2,
-            "forward": 1,
-            "reverse": 1,
-            "probe": 0,
+            "forward": 0.8,
+            "reverse": 0.8,
+            "probe": false,
             "DNA": 2,
-            "H2O": 17.05,
-            "total": 25,
+            "H2O": 6.4,
+            "total": 20,
             "BSA": false
         },
         "cicling": {
-            "name": "16S",
+            "name": "invA",
             "step_one": {
-                "time": "5 min",
+                "time": "10 min",
                 "temperature": "95 °C"
             },
             "step_two": {
-                "cicles": 35,
+                "cicles": 40,
                 "step_a": {
-                    "time": "45 seg",
-                    "temperature": "94 °C"
+                    "time": "30 seg",
+                    "temperature": "95 °C"
                 },
                 "step_b": {
-                    "time": "1 min",
-                    "temperature": "58 °C"
+                    "time": "30 seg",
+                    "temperature": "64 °C"
                 },
                 "step_c": {
-                    "time": "1.5 min",
-                    "temperature": "72 °C"
+                    "time": "30 seg",
+                    "temperature": "64 °C"
                 }
             },
-            "step_three": {
-                "time": "7 min",
-                "temperature": "72 °C"
-            },
-            "melting": false
+            "melting": true
         },
-        "reference": "Lane et al. 1991. 16S/23S rRNA sequencing. Page 115 in: Nucleic Acid Techniques in Bacterial Systematics",
-        "reference_http": "",
+        "reference": "Malorny et al. 2003. Multicenter Validation of the Analytical Accuracy of Salmonella PCR: towards an International Standard",
+        "reference_http": "https://journals.asm.org/doi/full/10.1128/AEM.69.1.290-296.2003",
         "positive_control": "strain",
         "image": "",
         "notes": ""
@@ -725,5 +724,199 @@
         "positive_control": "strain",
         "image": "",
         "notes": ""
+    },
+    {
+        "id": "s11",
+        "target_microorganism": "Chlamydia abortus",
+        "target_group": "Bacteria",
+        "type_1": "qPCR",
+        "type_2": "singleplex",
+        "target_gene": "ompA",
+        "target_size": "86 bp",
+        "forward": {
+            "name": "",
+            "seq": "GCGGCATTCAACCTCGTT",
+            "primer_conc": "0.3 uM"
+        },
+        "reverse": {
+            "name": "",
+            "seq": "CCTTGAGTGATGCCTACATTGG",
+            "primer_conc": "0.3 uM"
+        },
+        "probe": {
+            "name": "",
+            "seq": "FAM-TGTTAAAGGATCCTCCATAGCAGCTGATCAG-TAMRA",
+            "probe_conc": "0.25 uM"
+        },
+        "rxn": {
+            "buffer": {
+                "name": "SensiFast(Bioline)",
+                "volume": 12.5
+            },
+            "forward": 0.75,
+            "reverse": 0.75,
+            "probe": 0.625,
+            "DNA": 3,
+            "H2O": 7.375,
+            "total": 25,
+            "BSA": false
+        },
+        "cicling": {
+            "name": "lala",
+            "step_one": {
+                "time": "5 min",
+                "temperature": "95 °C"
+            },
+            "step_two": {
+                "cicles": 45,
+                "step_a": {
+                    "time": "15 seg",
+                    "temperature": "95 °C"
+                },
+                "step_b": {
+                    "time": "30 seg",
+                    "temperature": "60 °C"
+                },
+                "step_c": {
+                    "time": "30 seg",
+                    "temperature": "60 °C"
+                }
+            },
+            "step_three": false,
+            "melting": false
+        },
+        "reference": "Livingstone et al. 2009. Molecular detection of Chlamydophila abortus in post-abortion sheep at oestrus and subsequent lambing",
+        "reference_http": "https://sci-hub.se/10.1016/j.vetmic.2008.09.033",
+        "positive_control": "?",
+        "image": "",
+        "notes": ""
+    },
+    {
+        "id": "s12",
+        "target_microorganism": "Bovinos",
+        "target_group": "Host",
+        "type_1": "qPCR",
+        "type_2": "singleplex",
+        "target_gene": "b-actina",
+        "target_size": "95 pb",
+        "forward": {
+             "name": "ACT2-1030-F",
+            "seq": "AGCGCAAGTACTCCGTGTG",
+            "primer_conc": "0.25 uM"
+        },
+        "reverse": {
+            "name": "ACT-1135-R",
+            "seq": "CGGACTCATCGTACTCCTGCTT",
+            "primer_conc": "0.25 uM"
+        },
+        "probe": {
+            "name": "ACT-1081-HEX",
+            "seq": "HEX-TCGCTGTCCACCTTCCAGCAGATGT-BHQ1",
+            "probe_conc": "0.125 uM"
+        },
+        "rxn": {
+            "buffer": {
+                "name": "SensiFast(Bioline)",
+                "volume": 10
+            },
+            "forward": 0.5,
+            "reverse": 0.5,
+            "probe": 0.25,
+            "DNA": 2,
+            "H2O": 6.75,
+            "total": 20,
+            "BSA": false
+        },
+        "cicling": {
+            "name": "lala",
+            "step_one": {
+                "time": "5 min",
+                "temperature": "95 °C"
+            },
+            "step_two": {
+                "cicles": 42,
+                "step_a": {
+                    "time": "15 seg",
+                    "temperature": "95 °C"
+                },
+                "step_b": {
+                    "time": "30 seg",
+                    "temperature": "58 °C"
+                },
+                "step_c": {
+                    "time": "30 seg",
+                    "temperature": "60 °C"
+                }
+            },
+            "step_three": false,
+            "melting": false
+        },
+        "reference": "Wernike et al. 2011. Development and validation of a triplex real-time PCR assay for the rapid",
+        "reference_http": "https://sci-hub.se/10.1016/j.jviromet.2011.03.028",
+        "positive_control": "sample",
+        "image": "",
+        "notes": ""
+    },
+    {
+        "id": "s13",
+        "target_microorganism": "Mamíferos",
+        "target_group": "Host",
+        "type_1": "qPCR",
+        "type_2": "singleplex",
+        "target_gene": "ZFX",
+        "target_size": "245 bp",
+        "forward": {
+            "name": "ZFX-F",
+            "seq": "TGGCCCTGATGGACATCC",
+            "primer_conc": "0.3 uM"
+        },
+        "reverse": {
+            "name": "ZFX-R",
+            "seq": "AATGCTTTCCGCACTCATCG",
+            "primer_conc": "0.3 uM"
+        },
+        "probe": false,
+        "rxn": {
+            "buffer": {
+                "name": "SYBR(Applied)",
+                "volume": 10
+            },
+            "forward": 0.6,
+            "reverse": 0.6,
+            "probe": false,
+            "DNA": 2,
+            "H2O": 6.8,
+            "total": 20,
+            "BSA": false
+        },
+        "cicling": {
+            "name": "lala",
+            "step_one": {
+                "time": "10 min",
+                "temperature": "95 °C"
+            },
+            "step_two": {
+                "cicles": 0,
+                "step_a": {
+                    "time": "25 seg",
+                    "temperature": "95 °C"
+                },
+                "step_b": {
+                    "time": "30 seg",
+                    "temperature": "60 °C"
+                },
+                "step_c": {
+                    "time": "30 seg",
+                    "temperature": "60 °C"
+                }
+            },
+            "step_three": false,
+            "melting": true
+        },
+        "reference": "(Mod.) Murphy et al. 2001. Molecular phylogenetics and the origins of placental mammals",
+        "reference_http": "https://sci-hub.se/https://doi.org/10.1038/35054550",
+        "positive_control": "sample",
+        "image": "",
+        "notes": "Cuidado, claramente amplifica ADN humano, ojo la contaminación!"
     }
 ]

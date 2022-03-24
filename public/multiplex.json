@@ -1,7 +1,7 @@
 [
     {
         "id": "m1",
-        "target_microorganism": "Hemoparásitos",
+        "target_microorganism": "Hemoparásitos (B. bovi, B. bigemina, A. marginale)",
         "target_group": "Múltiple",
         "type_1": "PCR",
         "type_2": "multiplex",
@@ -106,6 +106,297 @@
         "reference": "Parodi et al. 2006",
         "reference_http": "",
         "positive_control": "strain",
+        "image": "",
+        "notes": ""
+    },
+
+    {
+        "id": "m2",
+        "target_microorganism": "Virus de la leucosis bovina (BLV)",
+        "target_group": "Virus",
+        "type_1": "qPCR",
+        "type_2": "multiplex",
+        "target_gene": "polB || b-actina",
+        "groups": [
+            {
+                "target": "BLV",
+                "size": "120 bp",
+                "forward": {
+                    "name": "MRBLVL",
+                    "seq": "CCTCAATTCCCTTTAAACTA",
+                    "primer_conc": "0.4 uM",
+                    "volume": 0.8
+                },
+                "reverse": {
+                    "name": "MRBLVR",
+                    "seq": "GTACCGGGAAGACTGGATTA",
+                     "primer_conc": "0.4 uM",
+                    "volume": 0.8
+                },
+                "probe": {
+                    "name": "MRBLV_probe",
+                    "seq": "FAM-GAACGCCTCCAGGCCCTTCA-BHQ1",
+                    "probe_conc": "0.2 uM",
+                    "volume": 0.4
+                }
+            },
+            {
+                "target": "b-actina (bovine)",
+                "size": "95 pb",
+                "forward": {
+                    "name": "ACT2-1030-F",
+                    "seq": "AGCGCAAGTACTCCGTGTG",
+                    "primer_conc": "0.2 uM",
+                    "volume": 0.4
+                },
+                "reverse": {
+                    "name": "ACT-1135-R",
+                    "seq": "CGGACTCATCGTACTCCTGCTT",
+                     "primer_conc": "0.2 uM",
+                    "volume": 0.4
+                },
+                "probe": {
+                    "name": "ACT-1081-HEX",
+                    "seq": "HEX-TCGCTGTCCACCTTCCAGCAGATGT-BHQ1",
+                    "probe_conc": "0.12 uM",
+                    "volume": 0.24
+                }
+            }           
+        ],
+        "rxn": {
+            "buffer": {
+                "name": "SensiFast",
+                "volume": 10
+            },
+            "DNA": 2,
+            "H2O": 4.96,
+            "total": 20,
+            "BSA": false
+        },
+        "cicling": {
+            "name": "blv-actina",
+            "step_one": {
+                "time": "5 min",
+                "temperature": "95 °C"
+            },
+            "step_two": {
+                "cicles": 40,
+                "step_a": {
+                    "time": "30 seg",
+                    "temperature": "94 °C"
+                },
+                "step_b": {
+                    "time": "15 seg",
+                    "temperature": "60 °C"
+                },
+                "step_c": {
+                    "time": "15 seg",
+                    "temperature": "60 °C"
+                }
+            },
+            "step_three": false,
+            "melting": false
+        },
+        "reference": "Rola-Łuszczak et al. 2013. Development of an improved real time PCR for the detection of bovine leukaemia provirus nucleic acid and its use in the clarification of inconclusive serological test results. ",
+        "reference_http": "https://sci-hub.se/10.1016/j.jviromet.2013.02.014",
+        "positive_control": "sample",
+        "image": "",
+        "notes": "Mantener la misma concentración si se quiere usar sin b-actina. La b-actina es de Wernike el al. 2011 (Development and validation...)"
+    },
+    {
+        "id": "m3",
+        "target_microorganism": "Coxiella burnetii",
+        "target_group": "Bacteria",
+        "type_1": "qPCR",
+        "type_2": "multiplex",
+        "target_gene": "IS1111 || b-actina",
+        "groups": [
+            {
+                "target": "IS1111",
+                "size": "120 bp",
+                "forward": {
+                    "name": "CburF",
+                    "seq": "TTAAGGTGGGCTGCGTGGTGATGG",
+                    "primer_conc": "",
+                    "volume": 0
+                },
+                "reverse": {
+                    "name": "CburR",
+                    "seq": "GCTTCGTCCCGGTTCAACAATTGC",
+                     "primer_conc": "",
+                    "volume": 0
+                },
+                "probe": {
+                    "name": "Cb_probe_cul",
+                    "seq": "FAM-TGCATAATTCATCAAGGCACCAATGGT-BHQ1",
+                    "probe_conc": "",
+                    "volume": 0
+                }
+            },
+            {
+                "target": "b-actina (bovine)",
+                "size": "95 pb",
+                "forward": {
+                    "name": "ACT2-1030-F",
+                    "seq": "AGCGCAAGTACTCCGTGTG",
+                    "primer_conc": "",
+                    "volume": 0
+                },
+                "reverse": {
+                    "name": "ACT-1135-R",
+                    "seq": "CGGACTCATCGTACTCCTGCTT",
+                     "primer_conc": "0",
+                    "volume": 0
+                },
+                "probe": {
+                    "name": "ACT-1081-HEX",
+                    "seq": "HEX-TCGCTGTCCACCTTCCAGCAGATGT-BHQ1",
+                    "probe_conc": "",
+                    "volume": 0
+                }
+            }           
+        ],
+        "rxn": {
+            "buffer": {
+                "name": "SensiFast",
+                "volume": 10
+            },
+            "DNA": 2,
+            "H2O": 4.96,
+            "total": 20,
+            "BSA": false
+        },
+        "cicling": {
+            "name": "CoxBurn-actina",
+            "step_one": {
+                "time": "5 min",
+                "temperature": "95 °C"
+            },
+            "step_two": {
+                "cicles": 40,
+                "step_a": {
+                    "time": "10 seg",
+                    "temperature": "95 °C"
+                },
+                "step_b": {
+                    "time": "30 seg",
+                    "temperature": "60 °C"
+                },
+                "step_c": {
+                    "time": "30 seg",
+                    "temperature": "72 °C"
+                }
+            },
+            "step_three": false,
+            "melting": false
+        },
+        "reference": "Di Domenico et al. 2014. Coxiella burnetii in Central Italy: Novel Genotypes Are Circulating in Cattle and Goats",
+        "reference_http": "https://www.liebertpub.com/doi/10.1089/vbz.2014.1587",
+        "positive_control": "sample",
+        "image": "",
+        "notes": "La b-actina es de Wernike el al. 2011 (Development and validation...)"
+    },
+      {
+        "id": "m4",
+        "target_microorganism": "Ch. abortus, Ch. pecorum, C. burnetti",
+        "target_group": "Bacteria",
+        "type_1": "PCR",
+        "type_2": "multiplex",
+        "target_gene": "varios",
+        "groups": [
+            {
+                "target": "Chlamydia abortus",
+                "size": "821 bp",
+                "forward": {
+                    "name": "pmp-F ",
+                    "seq": "CTCACCATTGTCTCAGGTGGA",
+                    "primer_conc": "0.8 uM",
+                    "volume": 0
+                },
+                "reverse": {
+                    "name": "pmp-R821",
+                    "seq": "ACCGTAATGGGTAGGAGGGGT",
+                     "primer_conc": "0.8 uM",
+                    "volume": 0
+                },
+                "probe": false
+            },
+            {
+                "target": "Chlamydia pecorum",
+                "size": "526 bp",
+                "forward": {
+                    "name": "Cpc-F",
+                    "seq": "TTCGACTTCGCTTCTTACGC",
+                    "primer_conc": "0.8 uM",
+                    "volume": 0
+                },
+                "reverse": {
+                    "name": "Cpc-R",
+                    "seq": "TGAAGACCGAGCAAACCACC",
+                    "primer_conc": "0.8 uM",
+                    "volume": 0
+                },
+                "probe": false
+            },
+            {
+                "target": "Coxiella burnetii",
+                "size": "687 bp",
+                "forward": {
+                    "name": "Trans-1",
+                    "seq": "TATGTATCCACCGTAGCCAGT",
+                    "primer_conc": "0.8 uM",
+                    "volume": 0
+                },
+                "reverse": {
+                    "name": "Trans-2",
+                    "seq": "CCCAACAACACCTCCTTATTC",
+                    "primer_conc": "0.8 uM",
+                    "volume": 0
+                },
+                "probe": false
+            }
+        ],
+        "rxn": {
+            "buffer": {
+                "name": "",
+                "volume": 0
+            },
+            "probe": false,
+            "DNA": 0,
+            "H2O": 0,
+            "total": 0,
+            "BSA": false
+        },
+        "cicling": {
+            "name": "",
+            "step_one": {
+                "time": "",
+                "temperature": ""
+            },
+            "step_two": {
+                "cicles": 0,
+                "step_a": {
+                    "time": "",
+                    "temperature": ""
+                },
+                "step_b": {
+                    "time": "",
+                    "temperature": "61 "
+                },
+                "step_c": {
+                    "time": "",
+                    "temperature": ""
+                }
+            },
+            "step_three": {
+                "time": "",
+                "temperature": ""
+            },
+            "melting": false
+        },
+        "reference": "",
+        "reference_http": "",
+        "positive_control": "",
         "image": "",
         "notes": ""
     }

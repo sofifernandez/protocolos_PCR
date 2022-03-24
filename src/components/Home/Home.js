@@ -12,7 +12,7 @@ export const Home = () => {
 
     useEffect(() => {
         async function fetchMyAPI() {
-            const simplePCR = await fetch(`${process.env.PUBLIC_URL}/protocolos.json`).then(res => res.json())
+            const simplePCR = await fetch(`${process.env.PUBLIC_URL}/singleplex.json`).then(res => res.json())
             const nestedPCR = await fetch(`${process.env.PUBLIC_URL}/nested.json`).then(res => res.json())
             const multiplexPCR = await fetch(`${process.env.PUBLIC_URL}/multiplex.json`).then(res => res.json())
             const arrayTot = await simplePCR.concat(multiplexPCR, nestedPCR)
@@ -74,7 +74,7 @@ export const Home = () => {
                         ~Múltiples~
                     </div>
                     <div className="mt-4 mb-5 container-fluid row justify-content-center">
-                        {cards.length ? cards.filter(pcr => pcr.type_2 === "multiplex").map((card) => (<CardPCR card={card} key={card.id} />))
+                        {cards.length ? cards.filter(pcr => pcr.target_group === "Múltiple").map((card) => (<CardPCR card={card} key={card.id} />))
                             : "Loading..."}
                     </div>
                     <div className='characterTittle col-8 col-sm-6 fs-1 text-center'>
@@ -89,7 +89,9 @@ export const Home = () => {
                 :
 
                 <div className="mt-4 mb-5 container-fluid row justify-content-center">
-                    {cards.filter(pcr => pcr.target_microorganism.toLowerCase().includes(search.toLowerCase()) || pcr.target_gene.toLowerCase().includes(search.toLowerCase())).map((card) => (<CardPCR card={card} key={card.id} />))}
+                    {cards.filter(pcr => pcr.target_microorganism.toLowerCase().includes(search.toLowerCase()) ||
+                        pcr.target_gene.toLowerCase().includes(search.toLowerCase()))
+                        .map((card) => (<CardPCR card={card} key={card.id} />))}
                 </div>}
         </div>
 
