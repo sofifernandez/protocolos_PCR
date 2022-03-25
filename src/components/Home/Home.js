@@ -15,7 +15,9 @@ export const Home = () => {
             const simplePCR = await fetch(`${process.env.PUBLIC_URL}/singleplex.json`).then(res => res.json())
             const nestedPCR = await fetch(`${process.env.PUBLIC_URL}/nested.json`).then(res => res.json())
             const multiplexPCR = await fetch(`${process.env.PUBLIC_URL}/multiplex.json`).then(res => res.json())
-            const arrayTot = await simplePCR.concat(multiplexPCR, nestedPCR)
+            const arr = await simplePCR.concat(multiplexPCR, nestedPCR)
+            //sort alphabetically according to target_microorganism
+            const arrayTot = arr.sort((a, b) => (a.target_microorganism > b.target_microorganism) ? 1 : ((b.target_microorganism > a.target_microorganism) ? -1 : 0))
             if (typePCR === "PCR") {
                 setCards(arrayTot.filter(pcr=>pcr.type_1==="PCR"))
             } else if (typePCR === "qPCR") {
@@ -40,7 +42,7 @@ export const Home = () => {
             {/* SEARCHBOX----------------------------------------------------------- */}
             <div className="row mb-5 justify-content-center">
                 <div className=" col-10 col-sm-8 col-md-5 searchBox">
-                    <input className="col-10 inputSearch" type="text" name="busqueda" id="" placeholder="Buscar" onChange={handleChange} />
+                    <input className="col-10 inputSearch" type="text" name="busqueda" id="" placeholder="Buscar microorganismo o gen" onChange={handleChange} />
                     <div className="header-tag-circle pinkCircle">
                     </div>
                 </div>

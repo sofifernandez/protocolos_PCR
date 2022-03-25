@@ -298,7 +298,7 @@
     },
       {
         "id": "m4",
-        "target_microorganism": "Ch. abortus, Ch. pecorum, C. burnetti",
+        "target_microorganism": "Chlamydia abortus, Chlamydia pecorum y Coxiella burnetti",
         "target_group": "Bacteria",
         "type_1": "PCR",
         "type_2": "multiplex",
@@ -394,9 +394,9 @@
             },
             "melting": false
         },
-        "reference": "",
-        "reference_http": "",
-        "positive_control": "",
+        "reference": "Berri et al. 2009. Simultaneous differential detection of Chlamydophila abortus, Chlamydophila pecorum and Coxiella burnetii from aborted ruminant's clinical samples using multiplex PCR",
+        "reference_http": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725139/",
+        "positive_control": "samples",
         "image": "",
         "notes": ""
     }

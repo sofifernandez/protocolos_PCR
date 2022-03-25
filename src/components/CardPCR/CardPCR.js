@@ -5,7 +5,7 @@ export const CardPCR = ({card}) => {
    
     if (!card) return null;
     return (
-        <div className='row col-12 col-sm-10 col-md-6 col-lg-5 justify-content-center mx-auto px-0'>
+        <div className='row col-12 col-sm-10 col-md-6 col-lg-5 justify-content-center mx-auto px-auto'>
             {/* -------------------------------------------------------------------------- */
             /*                                    CARD                                    */
             /* -------------------------------------------------------------------------- */}

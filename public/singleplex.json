@@ -334,7 +334,7 @@
         "id": "s6",
         "target_microorganism": "Dichelobacter nodosus",
         "target_group": "Bacteria",
-        "type_1": "qPCR",
+        "type_1": "PCR",
         "type_2": "singleplex",
         "target_gene": "16S",
         "target_size": "783 bp",
@@ -372,32 +372,35 @@
         "cicling": {
             "name": "D.nodosus_16S",
             "step_one": {
-                "time": "",
-                "temperature": ""
+                "time": "5 min",
+                "temperature": "95 °C"
             },
             "step_two": {
                 "cicles": 40,
                 "step_a": {
-                    "time": "",
-                    "temperature": ""
+                    "time": "30 seg",
+                    "temperature": "95 °C"
                 },
                 "step_b": {
-                    "time": "",
-                    "temperature": ""
+                    "time": "30 seg",
+                    "temperature": "60(x2)|58(x2)|55(x10)|58(x15)°C"
                 },
                 "step_c": {
-                    "time": "",
-                    "temperature": ""
+                    "time": "30 seg",
+                    "temperature": "72 °C"
                 }
             },
-            "step_three": false,
+            "step_three": {
+                "time": "4 min",
+                "temperature": "72 °C"
+            },
             "melting": false
         },
         "reference": "La Fontaine et al. 1993.  Detection of Dichelobacter nodosus using species-specific oligonucleotides as PCR primers",
         "reference_http": "https://pubmed.ncbi.nlm.nih.gov/7689774/",
         "positive_control": "sample",
         "image": "",
-        "notes": ""
+        "notes": "El ciclado es de McPhearson et al. 2018. Detection and Serogrouping of Dichelobacter nodosus Infection by Use of Direct PCR from Lesion Swabs To Support Outbreak-Specific Vaccination for Virulent Footrot in Sheep."
     },
     {
         "id": "s7",
@@ -593,67 +596,6 @@
         "reference": "Schares et al. 2008.Characterization of a repetitive DNA fragment in Hammondia hammondi and its utility for the specific differentiation of H. hammondi from Toxoplasma gondii by PCR",
         "reference_http": "https://www.sciencedirect.com/science/article/abs/pii/S0890850808000364",
         "positive_control": "sample",
-        "image": "",
-        "notes": ""
-    },
-    {
-        "id": "s11",
-        "target_microorganism": "Salmonella spp.",
-        "target_group": "Bacteria",
-        "type_1": "qPCR",
-        "type_2": "singleplex",
-        "target_gene": "invA",
-        "target_size": "284 pb",
-        "forward": {
-            "name": "invA-F",
-            "seq": "GTGAAATTATCGCCACGTTCGGGCAA"
-        },
-        "reverse": {
-            "name": "invA-R",
-            "seq": "TCATCGCACCGTCAAAGGAACC"
-        },
-        "probe": false,
-        "primer_conc": "",
-        
-        "rxn": {
-            "buffer": {
-                "name": "SYBR Green-Applied",
-                "volume": 10
-            },
-            "forward": 0.8,
-            "reverse": 0.8,
-            "probe": false,
-            "DNA": 2,
-            "H2O": 6.4,
-            "total": 20,
-            "BSA": false
-        },
-        "cicling": {
-            "name": "invA",
-            "step_one": {
-                "time": "10 min",
-                "temperature": "95 °C"
-            },
-            "step_two": {
-                "cicles": 40,
-                "step_a": {
-                    "time": "30 seg",
-                    "temperature": "95 °C"
-                },
-                "step_b": {
-                    "time": "30 seg",
-                    "temperature": "64 °C"
-                },
-                "step_c": {
-                    "time": "30 seg",
-                    "temperature": "64 °C"
-                }
-            },
-            "melting": true
-        },
-        "reference": "Malorny et al. 2003. Multicenter Validation of the Analytical Accuracy of Salmonella PCR: towards an International Standard",
-        "reference_http": "https://journals.asm.org/doi/full/10.1128/AEM.69.1.290-296.2003",
-        "positive_control": "strain",
         "image": "",
         "notes": ""
     },
@@ -918,5 +860,66 @@
         "positive_control": "sample",
         "image": "",
         "notes": "Cuidado, claramente amplifica ADN humano, ojo la contaminación!"
+    },
+    {
+        "id": "s14",
+        "target_microorganism": "Salmonella spp.",
+        "target_group": "Bacteria",
+        "type_1": "qPCR",
+        "type_2": "singleplex",
+        "target_gene": "invA",
+        "target_size": "284 pb",
+        "forward": {
+            "name": "invA-F",
+            "seq": "GTGAAATTATCGCCACGTTCGGGCAA"
+        },
+        "reverse": {
+            "name": "invA-R",
+            "seq": "TCATCGCACCGTCAAAGGAACC"
+        },
+        "probe": false,
+        "primer_conc": "0.4 uM",
+        
+        "rxn": {
+            "buffer": {
+                "name": "SYBR Green-Applied",
+                "volume": 10
+            },
+            "forward": 0.8,
+            "reverse": 0.8,
+            "probe": false,
+            "DNA": 2,
+            "H2O": 6.4,
+            "total": 20,
+            "BSA": false
+        },
+        "cicling": {
+            "name": "invA",
+            "step_one": {
+                "time": "10 min",
+                "temperature": "95 °C"
+            },
+            "step_two": {
+                "cicles": 40,
+                "step_a": {
+                    "time": "30 seg",
+                    "temperature": "95 °C"
+                },
+                "step_b": {
+                    "time": "30 seg",
+                    "temperature": "64 °C"
+                },
+                "step_c": {
+                    "time": "30 seg",
+                    "temperature": "64 °C"
+                }
+            },
+            "melting": true
+        },
+        "reference": "Malorny et al. 2003. Multicenter Validation of the Analytical Accuracy of Salmonella PCR: towards an International Standard",
+        "reference_http": "https://journals.asm.org/doi/full/10.1128/AEM.69.1.290-296.2003",
+        "positive_control": "strain",
+        "image": "",
+        "notes": ""
     }
 ]

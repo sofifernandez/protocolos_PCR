@@ -9,9 +9,9 @@ export const SinglePlex = ({details}) => {
 
     if (!details) return null;
     return (
-        <div className="row container-fluid mx-0 justify-content-center">
+        <div className="row container-fluid mx-0 justify-content-center mb-5">
             {/* GENERAL DATA CARD ----------------------------------------------------------------------------------------------------------*/}
-            <div className="row col-12 col-md-9 col-xl-8 fs-1 pb-3 mb-5 detailCard">
+            <div className="row col-12 col-md-9 col-xl-7 fs-1 pb-3 mb-5 detailCard">
                 <p className='text-center'>{details.target_microorganism}</p>
                 <div>
                     <div className='row mb-2 justify-content-center'>
